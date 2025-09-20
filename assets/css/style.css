@@ -7,8 +7,17 @@
 }
 /* Global styles */
 body{
-    font-family: var(--secondary-font);
+    font-family: var(--primary-font);
     background-color: beige;
+}
+
+/* Hangman-visual */
+#hangman-visual img{
+    border-radius: 20px;
+}
+
+.hidden{
+    display: none;
 }
 
 /* Title */
