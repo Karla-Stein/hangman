@@ -8,12 +8,17 @@
 /* Global styles */
 body{
     font-family: var(--primary-font);
-    background-color: beige;
+    color: white;
+    background-color: black;
 }
 
 /* Hangman-visual */
 #hangman-visual img{
     border-radius: 20px;
+}
+
+.img-fluid{
+    max-width: 80%;
 }
 
 .hidden{
@@ -27,4 +32,12 @@ body{
 
 #game-title h1{
   font-weight: bold;
+}
+
+/* Buttons */
+
+.btn{
+    height: 3rem;
+    width: 3rem;
+    margin: 5px;
 }
