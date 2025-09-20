@@ -1,0 +1,21 @@
+/* Google fonts import */
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+/* CSS variables */
+:root {
+  --primary-font: "Indie Flower", cursive;
+  --secondary-font: "Montserrat", sans-serif;
+}
+/* Global styles */
+body{
+    font-family: var(--secondary-font);
+    background-color: beige;
+}
+
+/* Title */
+#game-title{
+    margin: 2rem 0;
+}
+
+#game-title h1{
+  font-weight: bold;
+}
