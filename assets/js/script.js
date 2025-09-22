@@ -48,11 +48,35 @@ document.addEventListener("DOMContentLoaded",function(){
             if(randomWordArray[i] === buttonLetter){
                 // if yes replace same index with correct letter
                   placeholderArray[i] = buttonLetter;
-                console.log(placeholderArray)   
-                   document.getElementById("placeholder").innerText = placeholderArray.join("")
-            
+                  console.log(placeholderArray)   
+                  document.getElementById("placeholder").innerText = placeholderArray.join("");
             }
+        }
+        // negate result oiutside the for loop
+        let correctGuess = randomWordArray.join("").includes(buttonLetter);
+        if (!correctGuess){
+            wrongGuess();
         }
     });
 }
 })
+
+function wrongGuess() {
+    alert("Aww..wrong answer. Try again");
+
+    const allImages = document.getElementsByTagName("img");
+    // Get the current visible image
+    const visibleImage = document.getElementsByClassName("visible")[0]; 
+    // currentImageIndex code from chatgpt
+    const currentImageIndex = Array.from(allImages).indexOf(visibleImage);
+
+    if (currentImageIndex < allImages.length - 1) {
+        // Hide current image
+        visibleImage.classList.remove("visible");
+        visibleImage.classList.add("hidden");
+        // Show next image
+        const nextImage = allImages[currentImageIndex + 1];
+        nextImage.classList.remove("hidden");
+        nextImage.classList.add("visible");
+    }
+}    
