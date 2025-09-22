@@ -50,6 +50,9 @@ document.addEventListener("DOMContentLoaded",function(){
                   placeholderArray[i] = buttonLetter;
                   console.log(placeholderArray)   
                   document.getElementById("placeholder").innerText = placeholderArray.join("");
+                  if(placeholderArray.join() ===randomWordArray.join()){
+                    alert("Yayy, You won!")
+                  }
             }
         }
         // negate result oiutside the for loop
@@ -60,7 +63,9 @@ document.addEventListener("DOMContentLoaded",function(){
     });
 }
 })
-
+/**
+ * Checks indexof the current image, hides it and make the next visible 
+ */
 function wrongGuess() {
     alert("Aww..wrong answer. Try again");
 
