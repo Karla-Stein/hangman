@@ -50,9 +50,7 @@ document.addEventListener("DOMContentLoaded",function(){
                   placeholderArray[i] = buttonLetter;
                   console.log(placeholderArray)   
                   document.getElementById("placeholder").innerText = placeholderArray.join("");
-                  if(placeholderArray.join() ===randomWordArray.join()){
-                    alert("Yayy, You won!")
-                  }
+                  gameWon(placeholderArray, randomWordArray);
             }
         }
         // negate result oiutside the for loop
@@ -84,4 +82,10 @@ function wrongGuess() {
         nextImage.classList.remove("hidden");
         nextImage.classList.add("visible");
     }
-}    
+}   
+
+function gameWon(placeholderArray, randomWordArray){
+    if(placeholderArray.join() ===randomWordArray.join()){
+                    alert("Yayy, You won!")
+                  }
+}
