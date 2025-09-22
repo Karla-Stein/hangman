@@ -29,5 +29,14 @@ document.addEventListener("DOMContentLoaded",function(){
        document.getElementById("buttons-3").appendChild(button);  
     } 
 
+    const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
+    // retrieve random number of array length
+    const wordBankIndex = Math.floor(Math.random() * wordBank.length);
+    let randomWord = wordBank[wordBankIndex];
+    let placeholder = "";
+    for (let char of randomWord){
+       placeholder += "_ "  
+    }
+    document.getElementById("placeholder").innerText += placeholder;  
 }
 )
