@@ -28,15 +28,31 @@ document.addEventListener("DOMContentLoaded",function(){
        button.setAttribute("type","button");
        document.getElementById("buttons-3").appendChild(button);  
     } 
-
+    
     const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
     // retrieve random number of array length
     const wordBankIndex = Math.floor(Math.random() * wordBank.length);
-    let randomWord = wordBank[wordBankIndex];
-    let placeholder = "";
-    for (let char of randomWord){
-       placeholder += "_ "  
-    }
-    document.getElementById("placeholder").innerText += placeholder;  
+    let randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
+    // placeholderArray code from chatGPT
+    let placeholderArray = new Array(randomWordArray.length).fill("_ ");  
+    document.getElementById("placeholder").innerText += placeholderArray.join("");  
+    
+    // Add eventListener for each button, retrives button letter
+    const buttons = document.getElementsByTagName("button");
+    for (let btn of buttons){
+        btn.addEventListener("click", function(){
+        let buttonLetter = btn.innerText;
+        console.log(randomWordArray)
+        // check if guessed letter is in random word
+        for (let i=0; i<randomWordArray.length; i++){
+            if(randomWordArray[i] === buttonLetter){
+                // if yes replace same index with correct letter
+                  placeholderArray[i] = buttonLetter;
+                console.log(placeholderArray)   
+                   document.getElementById("placeholder").innerText = placeholderArray.join("")
+            
+            }
+        }
+    });
 }
-)
+})
