@@ -15,10 +15,12 @@ body{
 /* Hangman-visual */
 #hangman-visual img{
     border-radius: 20px;
+    height: 300px;
+    width: 300px;
 }
 
 .img-fluid{
-    max-width: 80%;
+    max-width: auto;
 }
 
 .hidden{
@@ -40,4 +42,39 @@ body{
     height: 3rem;
     width: 3rem;
     margin: 5px;
+}
+
+/* Media queries */
+@media screen and (max-width: 768px){
+    .btn{
+    padding: 2px;
+    height: 40px;
+    width: 40px;
+    margin: 4px;  
+}
+}
+@media screen and (max-width: 503px){
+    .btn{
+    padding: 1px;
+    height: 30px;
+    width: 30px;
+    margin: 3px;
+    border-radius: 20%;
+}
+}
+@media screen and (max-width: 425px){
+    .btn{
+    padding: 1px;
+    height: 25px;
+    width: 25px;
+    margin: 2px;
+    border-radius: 20%;
+}
+}
+@media screen and (max-width: 425px){
+    #hangman-visual img{
+    border-radius: 20px;
+    height: 200px;
+    width: 200px;
+}
 }

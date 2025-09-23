@@ -1,3 +1,4 @@
+/* jshint esversion: 6 */
 /**
  * Creates Alphabet buttons and adds them to the DOM 
  */
@@ -42,15 +43,16 @@ document.addEventListener("DOMContentLoaded",function(){
     for (let btn of buttons){
         btn.addEventListener("click", function(){
         let buttonLetter = btn.innerText;
-        console.log(randomWordArray)
+        console.log(randomWordArray);
         // check if guessed letter is in random word
         for (let i=0; i<randomWordArray.length; i++){
             if(randomWordArray[i] === buttonLetter){
                 // if yes replace same index with correct letter
                   placeholderArray[i] = buttonLetter;
-                  console.log(placeholderArray)   
+                  console.log(placeholderArray) ;  
                   document.getElementById("placeholder").innerText = placeholderArray.join("");
                   gameWon(placeholderArray, randomWordArray);
+                 
             }
         }
         // negate result oiutside the for loop
@@ -60,7 +62,7 @@ document.addEventListener("DOMContentLoaded",function(){
         }
     });
 }
-})
+});
 /**
  * Checks indexof the current image, hides it and make the next visible 
  */
@@ -72,6 +74,7 @@ function wrongGuess() {
     const visibleImage = document.getElementsByClassName("visible")[0]; 
     // currentImageIndex code from chatgpt
     const currentImageIndex = Array.from(allImages).indexOf(visibleImage);
+    const lastImage = document.getElementById("img7");
 
     if (currentImageIndex < allImages.length - 1) {
         // Hide current image
@@ -81,11 +84,14 @@ function wrongGuess() {
         const nextImage = allImages[currentImageIndex + 1];
         nextImage.classList.remove("hidden");
         nextImage.classList.add("visible");
+        if(nextImage === lastImage){
+            alert("Game Over");
+        }
     }
 }   
 
 function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join() ===randomWordArray.join()){
-                    alert("Yayy, You won!")
+                    alert("Yayy, You won!");
                   }
 }
