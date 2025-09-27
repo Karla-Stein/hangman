@@ -12,6 +12,10 @@ body{
     background-color: black;
 }
 
+.invisible{
+    display: nonw;
+}
+
 /* Hangman-visual */
 #hangman-visual img{
     border-radius: 20px;

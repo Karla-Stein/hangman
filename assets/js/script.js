@@ -3,6 +3,12 @@
  * Creates Alphabet buttons and adds them to the DOM 
  */
 document.addEventListener("DOMContentLoaded",function(){
+
+    // localStorage.setItem("try", "5");
+    // localStorage.setItem("highScore", "0");
+    // let triesLeft = localStorage.getItem("try");
+    // let score = localStorage.getItem("highScore");
+
     const qwertyLayout = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
@@ -29,14 +35,14 @@ document.addEventListener("DOMContentLoaded",function(){
        button.setAttribute("type","button");
        document.getElementById("buttons-3").appendChild(button);  
     } 
-    
+
     const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
     // retrieve random number of array length
     const wordBankIndex = Math.floor(Math.random() * wordBank.length);
     let randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
     // placeholderArray code from chatGPT
     let placeholderArray = new Array(randomWordArray.length).fill("_ ");  
-    document.getElementById("placeholder").innerText += placeholderArray.join("");  
+    document.getElementById("placeholder").innerText = placeholderArray.join("");  
     
     // Add eventListener for each button, retrives button letter
     const buttons = document.getElementsByTagName("button");
@@ -49,7 +55,6 @@ document.addEventListener("DOMContentLoaded",function(){
             if(randomWordArray[i] === buttonLetter){
                 // if yes replace same index with correct letter
                   placeholderArray[i] = buttonLetter;
-                  console.log(placeholderArray) ;  
                   document.getElementById("placeholder").innerText = placeholderArray.join("");
                   gameWon(placeholderArray, randomWordArray);
                  
@@ -59,6 +64,7 @@ document.addEventListener("DOMContentLoaded",function(){
         let correctGuess = randomWordArray.join("").includes(buttonLetter);
         if (!correctGuess){
             wrongGuess();
+            triesLeft()
         }
     });
 }
@@ -83,10 +89,7 @@ function wrongGuess() {
         // Show next image
         const nextImage = allImages[currentImageIndex + 1];
         nextImage.classList.remove("hidden");
-        nextImage.classList.add("visible");
-        if(nextImage === lastImage){
-            alert("Game Over");
-        }
+        nextImage.classList.add("visible");     
     }
 }   
 
@@ -95,3 +98,19 @@ function gameWon(placeholderArray, randomWordArray){
                     alert("Yayy, You won!");
                   }
 }
+
+function triesLeft(){
+   
+    let triesLeft = parseInt(localStorage.getItem("try"));
+    document.getElementById("tries").innerText = `Tries left: ${triesLeft}`;
+    triesLeft--
+    localStorage.setItem("try", triesLeft);
+    console.log(triesLeft)
+}
+
+
+//  if(nextImage === lastImage){
+//             alert("Game Over");
+//         }
+// document.getElementById("highscore").innerText = `Highscore: ${score}`;
+    
