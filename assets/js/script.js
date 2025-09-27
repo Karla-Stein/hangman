@@ -4,10 +4,8 @@
  */
 document.addEventListener("DOMContentLoaded",function(){
 
-    // localStorage.setItem("try", "5");
-    // localStorage.setItem("highScore", "0");
-    // let triesLeft = localStorage.getItem("try");
-    // let score = localStorage.getItem("highScore");
+    localStorage.clear();
+    localStorage.setItem("try", "5");
 
     const qwertyLayout = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -105,6 +103,9 @@ function triesLeft(){
     document.getElementById("tries").innerText = `Tries left: ${triesLeft}`;
     triesLeft--
     localStorage.setItem("try", triesLeft);
+    if(triesLeft < 0){
+           document.getElementById("tries").innerText = "Tries left: 0"
+    }
     console.log(triesLeft)
 }
 
