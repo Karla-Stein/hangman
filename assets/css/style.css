@@ -13,7 +13,7 @@ body{
 }
 
 .invisible{
-    display: nonw;
+    display: none;
 }
 
 /* Hangman-visual */

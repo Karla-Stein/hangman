@@ -56,6 +56,8 @@ gameStart();
         // check if guessed letter is in random word
         for (let i=0; i<randomWordArray.length; i++){
             if(randomWordArray[i] === buttonLetter){
+                btn.style.backgroundColor = "#66FF66";
+                btn.setAttribute("disabled","true");
                 // if yes replace same index with correct letter
                   placeholderArray[i] = buttonLetter;
                   document.getElementById("placeholder").innerText = placeholderArray.join("");
@@ -66,6 +68,8 @@ gameStart();
         // negate result oiutside the for loop
         let correctGuess = randomWordArray.join("").includes(buttonLetter);
         if (!correctGuess){
+            btn.style.backgroundColor = "#FF7F50";
+            btn.setAttribute("disabled","true");
             wrongGuess();
             triesLeft()
         }
