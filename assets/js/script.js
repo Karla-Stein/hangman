@@ -101,14 +101,14 @@ function gameWon(placeholderArray, randomWordArray){
 }
 
 function triesLeft(){
-    let triesLeft = parseInt(localStorage.getItem("try"));
-    document.getElementById("tries").innerText = `Tries left: ${triesLeft}`;
-    triesLeft--
-    localStorage.setItem("try", triesLeft);
-    if(triesLeft < 0){
+    let userTry = parseInt(localStorage.getItem("try"));
+    document.getElementById("tries").innerText = `Tries left: ${userTry}`;
+    userTry--
+    localStorage.setItem("try", userTry);
+    if(userTry < 0){
            document.getElementById("tries").innerText = "Tries left: 0"
     }
-    console.log(triesLeft)
+    console.log(userTry)
 }
 
 
@@ -116,9 +116,59 @@ function addScore(){
     let userScore = parseInt(localStorage.getItem("highscore"));
     userScore++;
     document.getElementById("highscore").innerText = `Highscore: ${userScore}`;
-    localStorage.setItem("try", userScore);
+    localStorage.setItem("highscore", userScore);
     console.log(userScore)
+}
 
+function newGame(){ 
+    let userTry = parseInt(localStorage.getItem("try"));
+    let firstImage = document.getElementsByTagName("img")[0];
+    console.log(userTry)
+
+    switch (userTry) {
+         case 4:
+             document.getElementsByTagName("img")[1].classList.remove("visible");
+             document.getElementsByTagName("img")[1].classList.add("hidden");
+             firstImage.classList.remove("hidden");
+             firstImage.classList.add("visible");
+             break;
+         case 3:
+             document.getElementsByTagName("img")[2].classList.remove("visible");
+             document.getElementsByTagName("img")[2].classList.add("hidden");
+             firstImage.classList.remove("hidden");
+             firstImage.classList.add("visible");
+             break;
+         case 2:
+             document.getElementsByTagName("img")[3].classList.remove("visible");
+             document.getElementsByTagName("img")[3].classList.add("hidden");
+             firstImage.classList.remove("hidden");
+             firstImage.classList.add("visible");
+             break;
+         case 1:
+             document.getElementsByTagName("img")[4].classList.remove("visible");
+             document.getElementsByTagName("img")[4].classList.add("hidden");
+             firstImage.classList.remove("hidden");
+             firstImage.classList.add("visible");
+             break;
+         case 0:
+             document.getElementsByTagName("img")[5].classList.remove("visible");
+             document.getElementsByTagName("img")[5].classList.add("hidden");
+             firstImage.classList.remove("hidden");
+             firstImage.classList.add("visible");
+             break;
+         case -1:
+             document.getElementsByTagName("img")[6].classList.remove("visible");
+             document.getElementsByTagName("img")[6].classList.add("hidden");
+             firstImage.classList.remove("hidden");
+             firstImage.classList.add("visible");
+             break;
+         default:
+              console.log("test");
+    }
+     localStorage.setItem("try", "5");
+     let resetTries = localStorage.getItem("try");
+     document.getElementById("tries").innerText = "Tries left: 6";
+    
 }
 //  if(nextImage === lastImage){
 //             alert("Game Over");
