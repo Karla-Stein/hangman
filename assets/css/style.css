@@ -16,6 +16,11 @@ body{
     display: none;
 }
 
+/* Navbar */
+#navbar{
+    font-family: var(--secondary-font);
+}
+
 /* Hangman-visual */
 #hangman-visual img{
     border-radius: 20px;

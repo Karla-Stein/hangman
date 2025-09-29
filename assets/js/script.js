@@ -188,7 +188,7 @@ function newGame(){
     // placeholderArray code from chatGPT
     let placeholderArray = new Array(randomWordArray.length).fill("_ ");  
     document.getElementById("placeholder").innerText = placeholderArray.join("");  
-
+    
      for (let i=0; i<randomWordArray.length; i++){
             if(randomWordArray[i] === buttonLetter){
                 btn.style.backgroundColor = "#66FF66";

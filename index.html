@@ -12,11 +12,54 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar navbar-expand-lg fixed-top mb-5" data-bs-theme="dark">
+      <div class="container">
+        <!-- replace text with logo and point to index.html -->
+        <a class="navbar-brand" href="index.html">
+          The Hangman Rules
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- ms-auto adds automatic margin to the left side of its element -->
+          <ul class="navbar-nav ms-auto mb-2">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Start Game</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Reset Game</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Choose Your Level</a>
+              <ul class="dropdown-menu" id="dropdown">
+                <li>
+                  <a class="dropdown-item" href="#">Easy</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Medium</a>
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#">Hard</a>
+                </li>
+               </ul> 
+          </ul>
+        </div>
+      </div>
+    </nav>
      <header>
       <div id="game-title" class="container-fluid">
         <div class="row">          
           <div class="col-12">
-            <h2 class="text-center display-1">The Hangman Game</h2>
+            <h2 class="text-center display-1 mt-5">The Hangman Game</h2>
           </div>
         </div>
      </div>
