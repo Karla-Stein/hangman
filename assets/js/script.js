@@ -70,7 +70,7 @@ gameStart();
         if (!correctGuess){
             btn.style.backgroundColor = "#FF7F50";
             btn.setAttribute("disabled","true");
-            wrongGuess();
+            wrongGuess(randomWordArray);
             triesLeft()
         }
     });
@@ -79,7 +79,7 @@ gameStart();
 /**
  * Checks indexof the current image, hides it and make the next visible 
  */
-function wrongGuess() {
+function wrongGuess(randomWordArray) {
     alert("Aww..wrong answer. Try again");
 
     const allImages = document.getElementsByTagName("img");
@@ -87,16 +87,20 @@ function wrongGuess() {
     const visibleImage = document.getElementsByClassName("visible")[0]; 
     // currentImageIndex code from chatgpt
     const currentImageIndex = Array.from(allImages).indexOf(visibleImage);
-    const lastImage = document.getElementById("img7");
 
-    if (currentImageIndex < allImages.length - 1) {
-        // Hide current image
+    if (currentImageIndex === 5) {
+        document.getElementById("placeholder").innerText = randomWordArray.join("");   
+        alert("Game over - You lost")  
+    }else{
+          // Hide current image
         visibleImage.classList.remove("visible");
         visibleImage.classList.add("hidden");
         // Show next image
         const nextImage = allImages[currentImageIndex + 1];
         nextImage.classList.remove("hidden");
-        nextImage.classList.add("visible");     
+        nextImage.classList.add("visible");  
+        console.log(currentImageIndex);
+        console.log(allImages.length)     
     }
 }   
 
@@ -176,6 +180,35 @@ function newGame(){
      localStorage.setItem("try", "5");
      let resetTries = localStorage.getItem("try");
      document.getElementById("tries").innerText = "Tries left: 6";
+     
+    const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
+    // retrieve random number of array length
+    const wordBankIndex = Math.floor(Math.random() * wordBank.length);
+    let randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
+    // placeholderArray code from chatGPT
+    let placeholderArray = new Array(randomWordArray.length).fill("_ ");  
+    document.getElementById("placeholder").innerText = placeholderArray.join("");  
+
+     for (let i=0; i<randomWordArray.length; i++){
+            if(randomWordArray[i] === buttonLetter){
+                btn.style.backgroundColor = "#66FF66";
+                btn.setAttribute("disabled","true");
+                // if yes replace same index with correct letter
+                  placeholderArray[i] = buttonLetter;
+                  document.getElementById("placeholder").innerText = placeholderArray.join("");
+                  gameWon(placeholderArray, randomWordArray);
+                 
+            }
+        }
+        // negate result oiutside the for loop
+        let correctGuess = randomWordArray.join("").includes(buttonLetter);
+        if (!correctGuess){
+            btn.style.backgroundColor = "#FF7F50";
+            btn.setAttribute("disabled","true");
+            wrongGuess();
+            triesLeft()
+        }
+     
     
 }
 //  if(nextImage === lastImage){
