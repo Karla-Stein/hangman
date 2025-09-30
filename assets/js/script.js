@@ -53,27 +53,27 @@ gameStart();
         btn.addEventListener("click", function(){
         let buttonLetter = btn.innerText;
         console.log(randomWordArray);
-        // check if guessed letter is in random word
-        for (let i=0; i<randomWordArray.length; i++){
-            if(randomWordArray[i] === buttonLetter){
-                btn.style.backgroundColor = "#66FF66";
-                btn.setAttribute("disabled","true");
-                // if yes replace same index with correct letter
-                  placeholderArray[i] = buttonLetter;
-                  document.getElementById("placeholder").innerText = placeholderArray.join("");
-                  gameWon(placeholderArray, randomWordArray);
-                 
-            }
-        }
-        // negate result oiutside the for loop
-        let correctGuess = randomWordArray.join("").includes(buttonLetter);
-        if (!correctGuess){
-            btn.style.backgroundColor = "#FF7F50";
+        
+        
+    if (!randomWordArray.join("").includes(buttonLetter)){
+        btn.style.backgroundColor = "#FF7F50";
+        btn.setAttribute("disabled","true");
+        wrongGuess(randomWordArray);
+        triesLeft()
+    }else{
+    // check if guessed letter is in random word
+    for (let i=0; i<randomWordArray.length; i++){
+        if(randomWordArray[i] === buttonLetter){
+            btn.style.backgroundColor = "#66FF66";
             btn.setAttribute("disabled","true");
-            wrongGuess(randomWordArray);
-            triesLeft()
+            // if yes replace same index with correct letter
+              placeholderArray[i] = buttonLetter;
+              document.getElementById("placeholder").innerText = placeholderArray.join("");
+              gameWon(placeholderArray, randomWordArray);
+             
         }
-    });
+    }}
+ });
 }
 }
 /**
@@ -179,37 +179,7 @@ function newGame(){
     }
      localStorage.setItem("try", "5");
      let resetTries = localStorage.getItem("try");
-     document.getElementById("tries").innerText = "Tries left: 6";
-     
-    const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
-    // retrieve random number of array length
-    const wordBankIndex = Math.floor(Math.random() * wordBank.length);
-    let randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
-    // placeholderArray code from chatGPT
-    let placeholderArray = new Array(randomWordArray.length).fill("_ ");  
-    document.getElementById("placeholder").innerText = placeholderArray.join("");  
-    
-     for (let i=0; i<randomWordArray.length; i++){
-            if(randomWordArray[i] === buttonLetter){
-                btn.style.backgroundColor = "#66FF66";
-                btn.setAttribute("disabled","true");
-                // if yes replace same index with correct letter
-                  placeholderArray[i] = buttonLetter;
-                  document.getElementById("placeholder").innerText = placeholderArray.join("");
-                  gameWon(placeholderArray, randomWordArray);
-                 
-            }
-        }
-        // negate result oiutside the for loop
-        let correctGuess = randomWordArray.join("").includes(buttonLetter);
-        if (!correctGuess){
-            btn.style.backgroundColor = "#FF7F50";
-            btn.setAttribute("disabled","true");
-            wrongGuess();
-            triesLeft()
-        }
-     
-    
+     document.getElementById("tries").innerText = "Tries left: 6";       
 }
 //  if(nextImage === lastImage){
 //             alert("Game Over");
