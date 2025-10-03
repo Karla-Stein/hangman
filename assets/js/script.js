@@ -125,7 +125,7 @@ function triesLeft(){
 function addScore(){
     let userScore = parseInt(localStorage.getItem("highscore"));
     userScore++;
-    document.getElementById("highscore").innerText = `Highscore: ${userScore}`;
+    document.getElementById("highscore").innerText = userScore;
     localStorage.setItem("highscore", userScore);
     console.log(userScore)
 }
