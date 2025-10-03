@@ -66,6 +66,11 @@ body{
     pointer-events: none;
 }
 
+/* Modal */
+#end-game{
+    font-family: var(--secondary-font);
+}
+
 /* Media queries */
 @media screen and (max-width: 768px){
     .btn{

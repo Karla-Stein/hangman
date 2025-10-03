@@ -3,6 +3,11 @@
  * Creates Alphabet buttons and adds them to the DOM 
  */
 let userTry = 6;
+// Bootstrap modal
+const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
+let modalTitle = document.getElementById("modal-title");
+let modalText = document.getElementById("modal-text");
+
 document.addEventListener("DOMContentLoaded",function(){
 
     
@@ -79,7 +84,6 @@ gameStart();
  * Checks indexof the current image, hides it and make the next visible 
  */
 function wrongGuess(randomWordArray) {
-    alert("Aww..wrong answer. Try again");
 
     const allImages = document.getElementsByTagName("img");
     // Get the current visible image
@@ -89,8 +93,14 @@ function wrongGuess(randomWordArray) {
 
     if (currentImageIndex === 5) {
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
-        alert("Game over - You lost");
         disableButtons();
+        // update modal text and then show modal
+        modalTitle.innerHTML="<h2>Game Over</h2>"
+        modalText.innerHTML = `
+        The correct word was <strong>${randomWordArray.join("")}</strong>.
+        <br>
+        Better luck next time!`;
+        modalEndGame.show();
         newGame();
     }else{
           // Hide current image
