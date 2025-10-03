@@ -92,6 +92,8 @@ function wrongGuess(randomWordArray) {
     const currentImageIndex = Array.from(allImages).indexOf(visibleImage);
 
     if (currentImageIndex === 5) {
+        document.getElementById("img5").classList.toggle("hidden");
+        document.getElementById("img6").classList.toggle("hidden");
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
         disableButtons();
         // update modal text and then show modal
@@ -101,7 +103,6 @@ function wrongGuess(randomWordArray) {
         <br>
         Better luck next time!`;
         modalEndGame.show();
-        newGame();
     }else{
           // Hide current image
         visibleImage.classList.remove("visible");
@@ -110,8 +111,7 @@ function wrongGuess(randomWordArray) {
         const nextImage = allImages[currentImageIndex + 1];
         nextImage.classList.remove("hidden");
         nextImage.classList.add("visible");  
-        console.log(currentImageIndex);
-        console.log(allImages.length)     
+        console.log("Current image index:" ,currentImageIndex);   
     }
 }   
 
@@ -127,7 +127,7 @@ function triesLeft(){
     // decrements and displays userTry.Updates global vaiable
     document.getElementById("tries").innerText =  userTry -1;
     userTry--;
-    console.log(userTry)
+    console.log("User tries left:" , userTry)
 }
 
 
@@ -136,57 +136,10 @@ function addScore(){
     userScore++;
     document.getElementById("highscore").innerText = userScore;
     localStorage.setItem("highscore", userScore);
-    console.log(userScore)
+    console.log("UserScore:", userScore)
 }
 
-function newGame(){ 
-    let userTry = parseInt(localStorage.getItem("try"));
-    let firstImage = document.getElementsByTagName("img")[0];
-    console.log(userTry)
 
-    switch (userTry) {
-         case 4:
-             document.getElementsByTagName("img")[1].classList.remove("visible");
-             document.getElementsByTagName("img")[1].classList.add("hidden");
-             firstImage.classList.remove("hidden");
-             firstImage.classList.add("visible");
-             break;
-         case 3:
-             document.getElementsByTagName("img")[2].classList.remove("visible");
-             document.getElementsByTagName("img")[2].classList.add("hidden");
-             firstImage.classList.remove("hidden");
-             firstImage.classList.add("visible");
-             break;
-         case 2:
-             document.getElementsByTagName("img")[3].classList.remove("visible");
-             document.getElementsByTagName("img")[3].classList.add("hidden");
-             firstImage.classList.remove("hidden");
-             firstImage.classList.add("visible");
-             break;
-         case 1:
-             document.getElementsByTagName("img")[4].classList.remove("visible");
-             document.getElementsByTagName("img")[4].classList.add("hidden");
-             firstImage.classList.remove("hidden");
-             firstImage.classList.add("visible");
-             break;
-         case 0:
-             document.getElementsByTagName("img")[5].classList.remove("visible");
-             document.getElementsByTagName("img")[5].classList.add("hidden");
-             firstImage.classList.remove("hidden");
-             firstImage.classList.add("visible");
-             break;
-         case -1:
-             document.getElementsByTagName("img")[6].classList.remove("visible");
-             document.getElementsByTagName("img")[6].classList.add("hidden");
-             firstImage.classList.remove("hidden");
-             firstImage.classList.add("visible");
-             break;
-         default:
-              console.log("test");
-    }
-     localStorage.setItem("try", "5");
-     let resetTries = localStorage.getItem("try");        
-}
 
 function disableButtons(){
    let allButtons = document.querySelectorAll("#button-container button");
