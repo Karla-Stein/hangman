@@ -2,10 +2,11 @@
 /**
  * Creates Alphabet buttons and adds them to the DOM 
  */
+let userTry = 6;
 document.addEventListener("DOMContentLoaded",function(){
 
-    localStorage.clear();
-    localStorage.setItem("try", "5");
+    
+    let currentScore = 0;
     localStorage.setItem("highscore", "0");
 
     const qwertyLayout = [
@@ -90,7 +91,8 @@ function wrongGuess(randomWordArray) {
 
     if (currentImageIndex === 5) {
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
-        alert("Game over - You lost")  
+        alert("Game over - You lost");
+        newGame();
     }else{
           // Hide current image
         visibleImage.classList.remove("visible");
@@ -113,13 +115,9 @@ function gameWon(placeholderArray, randomWordArray){
 }
 
 function triesLeft(){
-    let userTry = parseInt(localStorage.getItem("try"));
-    document.getElementById("tries").innerText = `Tries left: ${userTry}`;
-    userTry--
-    localStorage.setItem("try", userTry);
-    if(userTry < 0){
-           document.getElementById("tries").innerText = "Tries left: 0"
-    }
+    // decrements and displays userTry.Updates global vaiable
+    document.getElementById("tries").innerText =  userTry -1;
+    userTry--;
     console.log(userTry)
 }
 
@@ -178,11 +176,6 @@ function newGame(){
               console.log("test");
     }
      localStorage.setItem("try", "5");
-     let resetTries = localStorage.getItem("try");
-     document.getElementById("tries").innerText = "Tries left: 6";       
+     let resetTries = localStorage.getItem("try");        
 }
-//  if(nextImage === lastImage){
-//             alert("Game Over");
-//         }
-// document.getElementById("highscore").innerText = `Highscore: ${score}`;
     
