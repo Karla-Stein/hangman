@@ -57,16 +57,14 @@ gameStart();
         
         
     if (!randomWordArray.join("").includes(buttonLetter)){
-        btn.style.backgroundColor = "#FF7F50";
-        btn.setAttribute("disabled","true");
+        btn.style.background = "grey";
         wrongGuess(randomWordArray);
         triesLeft()
     }else{
     // check if guessed letter is in random word
     for (let i=0; i<randomWordArray.length; i++){
         if(randomWordArray[i] === buttonLetter){
-            btn.style.backgroundColor = "#66FF66";
-            btn.setAttribute("disabled","true");
+            btn.style.background= "grey";
             // if yes replace same index with correct letter
               placeholderArray[i] = buttonLetter;
               document.getElementById("placeholder").innerText = placeholderArray.join("");
@@ -92,6 +90,7 @@ function wrongGuess(randomWordArray) {
     if (currentImageIndex === 5) {
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
         alert("Game over - You lost");
+        disableButtons();
         newGame();
     }else{
           // Hide current image
@@ -177,5 +176,13 @@ function newGame(){
     }
      localStorage.setItem("try", "5");
      let resetTries = localStorage.getItem("try");        
+}
+
+function disableButtons(){
+   let allButtons = document.querySelectorAll("#button-container button");
+   for(let btn of allButtons){
+    btn.classList.add("disabled");
+    btn.style.background = "grey"
+   }
 }
     
