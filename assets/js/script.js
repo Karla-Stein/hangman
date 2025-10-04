@@ -8,6 +8,13 @@ const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
 
+// generate word and array with equal amount of charakters
+const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
+
+
+
+let allButtons = document.querySelectorAll("#button-container button");
+
 document.addEventListener("DOMContentLoaded",function(){
 
     
@@ -45,12 +52,18 @@ gameStart();
 });
 
    function gameStart(){
-    const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
+    let randomWordArray = [];
+    let placeholderArray = [];  
+    resetButtons();
+    userTry = 6;
+    document.getElementById("tries").innerText = userTry;
+    hideImages();
+    document.getElementById("img0").classList.remove("hidden");
     // retrieve random number of array length
     const wordBankIndex = Math.floor(Math.random() * wordBank.length);
-    let randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
+    randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
     // placeholderArray code from chatGPT
-    let placeholderArray = new Array(randomWordArray.length).fill("_ ");  
+    placeholderArray = new Array(randomWordArray.length).fill("_ ");  
     document.getElementById("placeholder").innerText = placeholderArray.join("");  
     
     // Add eventListener for each button, retrives button letter
@@ -58,6 +71,7 @@ gameStart();
     for (let btn of buttons){
         btn.addEventListener("click", function(){
         let buttonLetter = btn.innerText;
+        btn.classList.remove("dislable");
         console.log(randomWordArray);
         
         
@@ -95,28 +109,33 @@ function wrongGuess(randomWordArray) {
         document.getElementById("img5").classList.toggle("hidden");
         document.getElementById("img6").classList.toggle("hidden");
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
+       
         disableButtons();
         // update modal text and then show modal
         modalTitle.innerHTML="<h2>Game Over</h2>"
         modalText.innerHTML = `
         The correct word was <strong>${randomWordArray.join("")}</strong>.
         <br>
-        Better luck next time!`;
+        Better luck next time!
+        <br>
+        To restart the game press START GAME`;
         modalEndGame.show();
+        document.getElementById("start-button").addEventListener("click", gameStart);
     }else{
-          // Hide current image
+         // Hide current image
         visibleImage.classList.remove("visible");
         visibleImage.classList.add("hidden");
         // Show next image
         const nextImage = allImages[currentImageIndex + 1];
         nextImage.classList.remove("hidden");
         nextImage.classList.add("visible");  
+        console.log(allImages[currentImageIndex])
         console.log("Current image index:" ,currentImageIndex);   
-    }
-}   
+    } 
+} 
 
 function gameWon(placeholderArray, randomWordArray){
-    if(placeholderArray.join() === randomWordArray.join()){
+    if(placeholderArray.join("") === randomWordArray.join("")){
                     alert("Yayy, You won!");
                     addScore();
                     newGame();
@@ -139,13 +158,24 @@ function addScore(){
     console.log("UserScore:", userScore)
 }
 
-
-
 function disableButtons(){
-   let allButtons = document.querySelectorAll("#button-container button");
    for(let btn of allButtons){
     btn.classList.add("disabled");
     btn.style.background = "grey"
    }
 }
-    
+
+function resetButtons(){
+    for(let btn of allButtons){
+    btn.classList.remove("disabled");
+    btn.style.background = "white";
+    }
+}
+
+function hideImages() {
+    // hide all hangman images
+    let hangmanImages = document.querySelectorAll("#images img");
+    for(let img of hangmanImages){
+        img.classList.add("hidden")
+    }
+}
