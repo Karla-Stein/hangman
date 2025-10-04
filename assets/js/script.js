@@ -48,13 +48,13 @@ gameStart();
 });
 
    function gameStart(){
-    let randomWordArray = [];
-    let placeholderArray = [];  
-    resetButtons();
-    userTry = 6;
-    document.getElementById("tries").innerText = userTry;
-    hideImages();
-    document.getElementById("img6").classList.remove("hidden");
+    // let randomWordArray = [];
+    // let placeholderArray = [];  
+    // resetButtons();
+    // userTry = 6;
+    // document.getElementById("tries").innerText = userTry;
+    // hideImages();
+    // document.getElementById("img6").classList.remove("hidden");
     // retrieve random number of array length
     const wordBankIndex = Math.floor(Math.random() * wordBank.length);
     randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
@@ -124,7 +124,6 @@ function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join("") === randomWordArray.join("")){
                 addScore();
                 let highscore = parseInt(localStorage.getItem("highscore"))
-                disableButtons();
                 modalTitle.innerHTML="<h2>Congrats!</h2>"
                 modalText.innerHTML = `
                     You guessed <strong>${randomWordArray.join("")}</strong>.
@@ -134,7 +133,7 @@ function gameWon(placeholderArray, randomWordArray){
                     Total times won: <strong>${highscore}</strong>.
                 `;
                 modalEndGame.show();
-                disableButtons();
+                // disableButtons();
                   }
 }
 
@@ -175,3 +174,16 @@ function hideImages() {
         img.classList.add("hidden")
     }
 }
+
+function resetGame(){
+    let randomWordArray = [];
+    let placeholderArray = [];  
+    resetButtons();
+    userTry = 6;
+    document.getElementById("tries").innerText = userTry;
+    hideImages();
+    document.getElementById("img6").classList.remove("hidden");
+    gameStart();
+}
+
+document.getElementById("reset-button").addEventListener("click", resetGame)
