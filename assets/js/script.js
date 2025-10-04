@@ -7,10 +7,9 @@ let userTry = 6;
 const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
-
+let allButtons = "";
 // generate word and array with equal amount of charakters
 const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
-let allButtons = document.querySelectorAll("#button-container button");
 
 document.addEventListener("DOMContentLoaded",function(){
 
@@ -44,7 +43,7 @@ document.addEventListener("DOMContentLoaded",function(){
        button.setAttribute("type","button");
        document.getElementById("buttons-3").appendChild(button);  
     } 
-
+allButtons = document.querySelectorAll("#button-container button");
 gameStart();
 });
 
@@ -123,9 +122,19 @@ function wrongGuess(randomWordArray) {
 
 function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join("") === randomWordArray.join("")){
-                    alert("Yayy, You won!");
-                    addScore();
-                    newGame();
+                addScore();
+                let highscore = parseInt(localStorage.getItem("highscore"))
+                disableButtons();
+                modalTitle.innerHTML="<h2>Congrats!</h2>"
+                modalText.innerHTML = `
+                    You guessed <strong>${randomWordArray.join("")}</strong>.
+                    <br>
+                    Tries remaining: <strong>${userTry}</strong>.
+                    <br>
+                    Total times won: <strong>${highscore}</strong>.
+                `;
+                modalEndGame.show();
+                disableButtons();
                   }
 }
 
