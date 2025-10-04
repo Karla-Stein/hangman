@@ -72,21 +72,25 @@ gameStart();
 
         
         
-    if (!randomWordArray.join("").includes(buttonLetter)){
+function handleGuess(e) {
+    let btn = e.target;
+    let buttonLetter = btn.innerText;
+    btn.classList.remove("dislable");
+
+    if (!randomWordArray.includes(buttonLetter)) {
         btn.style.background = "grey";
         wrongGuess(randomWordArray);
-    }else{
-    // check if guessed letter is in random word
-    for (let i=0; i<randomWordArray.length; i++){
-        if(randomWordArray[i] === buttonLetter){
-            btn.style.background= "grey";
-            // if yes replace same index with correct letter
-              placeholderArray[i] = buttonLetter;
-              document.getElementById("placeholder").innerText = placeholderArray.join("");
-              gameWon(placeholderArray, randomWordArray);
-             
+    } else {
+        for (let i = 0; i < randomWordArray.length; i++) {
+            if (randomWordArray[i] === buttonLetter) {
+                placeholderArray[i] = buttonLetter;
+                btn.style.background = "grey";
+                document.getElementById("placeholder").innerText = placeholderArray.join("");
+            }
         }
-    }}
+        gameWon(placeholderArray, randomWordArray);
+    }
+}
 
 /**
  * Checks indexof the current image, hides it and make the next visible 
