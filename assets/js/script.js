@@ -7,7 +7,9 @@ let userTry = 6;
 const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
-let allButtons = "";
+let allButtons = [];
+let randomWordArray = [];
+let placeholderArray = [];
 // generate word and array with equal amount of charakters
 const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
 
@@ -44,31 +46,30 @@ document.addEventListener("DOMContentLoaded",function(){
        document.getElementById("buttons-3").appendChild(button);  
     } 
 allButtons = document.querySelectorAll("#button-container button");
+
+// Attach listeners ONCE to all buttons
+for (let btn of allButtons) {
+    btn.addEventListener("click", handleGuess);
+}
+
+// Start the first game
 gameStart();
 });
 
-   function gameStart(){
-    // let randomWordArray = [];
-    // let placeholderArray = [];  
-    // resetButtons();
-    // userTry = 6;
-    // document.getElementById("tries").innerText = userTry;
-    // hideImages();
-    // document.getElementById("img6").classList.remove("hidden");
-    // retrieve random number of array length
+   function gameStart() {
+    resetButtons();
+    userTry = 6;
+    document.getElementById("tries").innerText = userTry;
+    hideImages();
+    document.getElementById("img6").classList.remove("hidden");
+
     const wordBankIndex = Math.floor(Math.random() * wordBank.length);
     randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
-    // placeholderArray code from chatGPT
-    placeholderArray = new Array(randomWordArray.length).fill("_ ");  
-    document.getElementById("placeholder").innerText = placeholderArray.join("");  
+    placeholderArray = new Array(randomWordArray.length).fill("_ ");
+    document.getElementById("placeholder").innerText = placeholderArray.join("");
+     console.log(randomWordArray);
+}
 
-    // Add eventListener for each button, retrives button letter
-    const buttons = document.getElementsByTagName("button");
-    for (let btn of buttons){
-        btn.addEventListener("click", function(){
-        let buttonLetter = btn.innerText;
-        btn.classList.remove("dislable");
-        console.log(randomWordArray);
         
         
     if (!randomWordArray.join("").includes(buttonLetter)){
@@ -86,9 +87,7 @@ gameStart();
              
         }
     }}
- });
-}
-}
+
 /**
  * Checks indexof the current image, hides it and make the next visible 
  */
@@ -186,4 +185,5 @@ function resetGame(){
     gameStart();
 }
 
-document.getElementById("reset-button").addEventListener("click", resetGame)
+document.getElementById("reset-button").addEventListener("click", resetGame);
+document.getElementById("start-button").addEventListener("click", resetGame)
