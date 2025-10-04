@@ -10,9 +10,6 @@ let modalText = document.getElementById("modal-text");
 
 // generate word and array with equal amount of charakters
 const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
-
-
-
 let allButtons = document.querySelectorAll("#button-container button");
 
 document.addEventListener("DOMContentLoaded",function(){
@@ -58,14 +55,14 @@ gameStart();
     userTry = 6;
     document.getElementById("tries").innerText = userTry;
     hideImages();
-    document.getElementById("img0").classList.remove("hidden");
+    document.getElementById("img6").classList.remove("hidden");
     // retrieve random number of array length
     const wordBankIndex = Math.floor(Math.random() * wordBank.length);
     randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
     // placeholderArray code from chatGPT
     placeholderArray = new Array(randomWordArray.length).fill("_ ");  
     document.getElementById("placeholder").innerText = placeholderArray.join("");  
-    
+
     // Add eventListener for each button, retrives button letter
     const buttons = document.getElementsByTagName("button");
     for (let btn of buttons){
@@ -78,7 +75,6 @@ gameStart();
     if (!randomWordArray.join("").includes(buttonLetter)){
         btn.style.background = "grey";
         wrongGuess(randomWordArray);
-        triesLeft()
     }else{
     // check if guessed letter is in random word
     for (let i=0; i<randomWordArray.length; i++){
@@ -98,16 +94,18 @@ gameStart();
  * Checks indexof the current image, hides it and make the next visible 
  */
 function wrongGuess(randomWordArray) {
+      // selected letter isn't in the currentWordSplit
+    triesLeft(); // decrement number of tries remaining
+    hideImages(); // hide all hangman images
+    let currentImage = document.getElementById(`img${userTry}`); // unhide the hangman image of the matching tries remaining
+    currentImage.classList.remove("hidden");
 
-    const allImages = document.getElementsByTagName("img");
-    // Get the current visible image
-    const visibleImage = document.getElementsByClassName("visible")[0]; 
-    // currentImageIndex code from chatgpt
-    const currentImageIndex = Array.from(allImages).indexOf(visibleImage);
+    if (userTry === 0) {
+        // user ran out of tries; game over
+        gameLost(randomWordArray);
+    }
 
-    if (currentImageIndex === 5) {
-        document.getElementById("img5").classList.toggle("hidden");
-        document.getElementById("img6").classList.toggle("hidden");
+    function gameLost(){
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
        
         disableButtons();
@@ -120,18 +118,7 @@ function wrongGuess(randomWordArray) {
         <br>
         To restart the game press START GAME`;
         modalEndGame.show();
-        document.getElementById("start-button").addEventListener("click", gameStart);
-    }else{
-         // Hide current image
-        visibleImage.classList.remove("visible");
-        visibleImage.classList.add("hidden");
-        // Show next image
-        const nextImage = allImages[currentImageIndex + 1];
-        nextImage.classList.remove("hidden");
-        nextImage.classList.add("visible");  
-        console.log(allImages[currentImageIndex])
-        console.log("Current image index:" ,currentImageIndex);   
-    } 
+}
 } 
 
 function gameWon(placeholderArray, randomWordArray){
