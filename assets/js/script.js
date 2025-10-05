@@ -4,6 +4,7 @@
  */
 let userTry = 6;
 let currentScore = 0;
+let userScore = 0;
 // Bootstrap modal
 const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
@@ -134,8 +135,8 @@ function wrongGuess(randomWordArray) {
 
 function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join("") === randomWordArray.join("")){
-                addHighScore();
                 addCurrentScore();
+                addHighScore();
                 let highscore = parseInt(localStorage.getItem("highscore"))
                 modalTitle.innerHTML="<h2>Congrats!</h2>"
                 modalText.innerHTML = `
@@ -143,10 +144,12 @@ function gameWon(placeholderArray, randomWordArray){
                     <br>
                     Tries remaining: <strong>${userTry}</strong>.
                     <br>
-                    Total times won: <strong>${highscore}</strong>.
+                    Times won: <strong>${currentScore}</strong>.
+                    <br>
+                    Highscore: <strong>${highscore}</strong>
                 `;
                 modalEndGame.show();
-                // disableButtons();
+                resetGame();
                   }
 }
 
@@ -166,8 +169,9 @@ function addCurrentScore(){
 
 
 function addHighScore(){
-    let userScore = parseInt(localStorage.getItem("highscore"));
-    userScore++;
+    userScore = parseInt(localStorage.getItem("highscore"));
+    if (currentScore > userScore)
+    userScore = currentScore;
     document.getElementById("highscore").innerText = userScore;
     localStorage.setItem("highscore", userScore);
     console.log("UserScore:", userScore)
