@@ -45,6 +45,10 @@ body{
   font-weight: bold;
 }
 
+#display-highscore{
+    font-family: var(--secondary-font);
+}
+
 /* Placeholder section */
 #placeholder{
     font-family: var(--secondary-font);
