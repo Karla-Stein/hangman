@@ -81,10 +81,11 @@ gameStart();
 function handleGuess(e) {
     let btn = e.target;
     let buttonLetter = btn.innerText;
-    btn.classList.remove("dislable");
+    btn.classList.remove("disabled");
 
     if (!randomWordArray.includes(buttonLetter)) {
         btn.style.background = "grey";
+        btn.classList.add("disabled");
         wrongGuess(randomWordArray);
     } else {
         for (let i = 0; i < randomWordArray.length; i++) {
@@ -214,8 +215,8 @@ function restartGame(){
     hideImages();
     document.getElementById("img6").classList.remove("hidden");
     // localStorage.setItem("highscore", "0")
-    // let userScore = parseInt(localStorage.getItem("highscore"));
-    document.getElementById("highscore").innerText = userScore;
+    // // let userScore = parseInt(localStorage.getItem("highscore"));
+    // document.getElementById("highscore").innerText = userScore;
     gameStart();
 }
 
