@@ -7,6 +7,11 @@ let userTry = 6;
 const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
+
+const gameRules = new bootstrap.Modal(document.getElementById("game-rules"));
+let gameTitle = document.getElementById("game-title");
+let gameRuleText = document.getElementById("game-rule-text");
+
 let allButtons = [];
 let randomWordArray = [];
 let placeholderArray = [];
@@ -204,4 +209,38 @@ function restartGame(){
 }
 
 document.getElementById("reset-button").addEventListener("click", resetGame);
-document.getElementById("start-button").addEventListener("click", restartGame)
+document.getElementById("start-button").addEventListener("click", restartGame);
+
+document.getElementById("rules").addEventListener("click", clickGameRules);
+function clickGameRules(e){
+    e.preventDefault();
+        gameRuleText.innerHTML = `
+       <p><strong>🎯 Goal:</strong><br>
+       Guess the word correctly and aim to <strong>beat your current Highscore</strong>!</p>
+       <hr>
+       <h3>🟢 How to Start</h3>
+       <ul>
+         <li>The game begins at <strong>Medium</strong> difficulty by default.</li>
+         <li>You can also choose a different level: <strong>Easy</strong>, <strong>Medium</strong>, or <strong>Hard</strong> before starting.</li>
+         <li>A word will be randomly selected and displayed as underscores (<code>_</code>)—each one represents a letter.</li>
+       </ul>
+       <h3>❌ Wrong Guesses</h3>
+       <ul>
+         <li>You have <strong>6 tries</strong>.</li>
+         <li>Every wrong guess reveals a <strong>new part of the hangman</strong>.</li>
+         <li>If all 6 parts are revealed before the word is guessed, <strong>you lose</strong>, and the <strong>correct word will be shown</strong>.</li>
+       </ul>
+       <h3>✅ Winning & Scoring</h3>
+       <ul>
+         <li>Guess the word before running out of tries to <strong>win</strong>.</li>
+         <li>Every correct word guessed increases your <strong>score by 1</strong>.</li>
+         <li>Your <strong>Highscore is saved</strong> in your browser (local storage).</li>
+       </ul>
+       <h3>🔁 Game Controls</h3>
+       <ul>
+         <li><strong>Start Game</strong>: Fully resets the game — score, tries, and current word.</li>
+         <li><strong>Reset Game</strong>: Starts a new round with a new word and <strong>6 fresh tries</strong>, <em>but keeps your current score</em> so you can keep trying to beat your Highscore.</li>
+       </ul>`;
+           
+        gameRules.show();
+}

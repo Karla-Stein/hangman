@@ -67,7 +67,7 @@ body{
 }
 
 /* Modal */
-#end-game{
+.modal{
     font-family: var(--secondary-font);
 }
 
