@@ -3,6 +3,7 @@
  * Creates Alphabet buttons and adds them to the DOM 
  */
 let userTry = 6;
+let currentScore = 0;
 // Bootstrap modal
 const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
@@ -21,7 +22,7 @@ const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "sy
 document.addEventListener("DOMContentLoaded",function(){
 
     
-    let currentScore = 0;
+   
     localStorage.setItem("highscore", "0");
 
     const qwertyLayout = [
@@ -130,7 +131,8 @@ function wrongGuess(randomWordArray) {
 
 function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join("") === randomWordArray.join("")){
-                addScore();
+                addHighScore();
+                addCurrentScore();
                 let highscore = parseInt(localStorage.getItem("highscore"))
                 modalTitle.innerHTML="<h2>Congrats!</h2>"
                 modalText.innerHTML = `
@@ -146,14 +148,21 @@ function gameWon(placeholderArray, randomWordArray){
 }
 
 function triesLeft(){
-    // decrements and displays userTry.Updates global vaiable
+    // decrements and displays userTry.Updates global variable
     document.getElementById("tries").innerText =  userTry -1;
     userTry--;
     console.log("User tries left:" , userTry)
 }
 
+function addCurrentScore(){
+    // increments and displays current score.Updates global variable
+    document.getElementById("current-score").innerText =  currentScore + 1;
+    currentScore++;
+    console.log("Current score:" , currentScore)
+}
 
-function addScore(){
+
+function addHighScore(){
     let userScore = parseInt(localStorage.getItem("highscore"));
     userScore++;
     document.getElementById("highscore").innerText = userScore;
