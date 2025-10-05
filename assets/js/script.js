@@ -127,6 +127,8 @@ function wrongGuess(randomWordArray) {
         <br>
         To restart the game press START GAME`;
         modalEndGame.show();
+        currentScore = 0;
+        document.getElementById("current-score").innerText = currentScore;
 }
 } 
 
