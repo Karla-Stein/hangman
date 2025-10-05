@@ -209,10 +209,12 @@ function restartGame(){
     resetButtons();
     userTry = 6;
     document.getElementById("tries").innerText = userTry;
+    currentScore = 0;
+    document.getElementById("current-score").innerText = currentScore;
     hideImages();
     document.getElementById("img6").classList.remove("hidden");
-    localStorage.setItem("highscore", "0")
-    let userScore = parseInt(localStorage.getItem("highscore"));
+    // localStorage.setItem("highscore", "0")
+    // let userScore = parseInt(localStorage.getItem("highscore"));
     document.getElementById("highscore").innerText = userScore;
     gameStart();
 }
