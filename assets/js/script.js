@@ -189,5 +189,19 @@ function resetGame(){
     gameStart();
 }
 
+function restartGame(){
+    let randomWordArray = [];
+    let placeholderArray = [];  
+    resetButtons();
+    userTry = 6;
+    document.getElementById("tries").innerText = userTry;
+    hideImages();
+    document.getElementById("img6").classList.remove("hidden");
+    localStorage.setItem("highscore", "0")
+    let userScore = parseInt(localStorage.getItem("highscore"));
+    document.getElementById("highscore").innerText = userScore;
+    gameStart();
+}
+
 document.getElementById("reset-button").addEventListener("click", resetGame);
-document.getElementById("start-button").addEventListener("click", resetGame)
+document.getElementById("start-button").addEventListener("click", restartGame)
