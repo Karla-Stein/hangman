@@ -22,6 +22,8 @@ const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "sy
 
 document.addEventListener("DOMContentLoaded",function(){
 
+    let currentHighscore = localStorage.getItem("highscore");
+    document.getElementById("highscore").innerText = currentHighscore;
 
     const qwertyLayout = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
