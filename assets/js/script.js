@@ -22,9 +22,6 @@ const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "sy
 
 document.addEventListener("DOMContentLoaded",function(){
 
-    
-   
-    localStorage.setItem("highscore", "0");
 
     const qwertyLayout = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
@@ -251,14 +248,23 @@ function clickGameRules(e){
        <h3>✅ Winning & Scoring</h3>
        <ul>
          <li>Guess the word before running out of tries to <strong>win</strong>.</li>
-         <li>Every correct word guessed increases your <strong>score by 1</strong>.</li>
+         <li>Every correct word guessed increases your <strong>current score by 1</strong>.</li>
          <li>Your <strong>Highscore is saved</strong> in your browser (local storage).</li>
        </ul>
        <h3>🔁 Game Controls</h3>
        <ul>
          <li><strong>Start Game</strong>: Fully resets the game — score, tries, and current word.</li>
          <li><strong>Reset Game</strong>: Starts a new round with a new word and <strong>6 fresh tries</strong>, <em>but keeps your current score</em> so you can keep trying to beat your Highscore.</li>
+         <li><strong>Reset Highscore</strong>: Clears your saved highscore from the browser so you can start fresh.</li>
        </ul>`;
            
         gameRules.show();
+}
+
+document.getElementById("reset-highscore").addEventListener("click", resetHighscore)
+function resetHighscore(){
+    localStorage.setItem("highscore", "0");
+    resetHighscore = localStorage.getItem("highscore");
+    document.getElementById("highscore").innerText = resetHighscore;
+    console.log("Reset highscore:", resetHighscore)
 }
