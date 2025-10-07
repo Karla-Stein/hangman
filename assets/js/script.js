@@ -27,11 +27,13 @@ document.addEventListener("DOMContentLoaded",function(){
     let currentHighscore = localStorage.getItem("highscore");
     document.getElementById("highscore").innerText = currentHighscore;
 
+    // Create on-screen keyboard layout using QWERTY rows
     const qwertyLayout = [
   ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
   ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
   ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
 ];
+     // Each character is turned into a styled button and added to the appropriate row container
     for (let char of qwertyLayout[0]){
        let button =  document.createElement("button");
        button.classList.add("btn", "btn-light", "btn-lg");
@@ -63,7 +65,11 @@ for (let btn of allButtons) {
 // Start the first game
 gameStart();
 });
-
+/**
+ * Start of the game. Get random number of array length to use as index for the randomWordArray.
+ * Creates array and fills with underscores equal to the random word chosen.
+ * Displays underscores.
+ */
    function gameStart() {
     resetButtons();
     userTry = 6;
@@ -79,7 +85,13 @@ gameStart();
 }
 
         
-        
+ /**
+  * Handles the click event for letter buttons during the game.
+  * Retrieves the letter the button represents.
+  * Disables the button after it is clicked.
+  * Checks if the letter was in the random word and calls either wrongGuess or gameWon.
+  * @param {Event} e 
+  */    
 function handleGuess(e) {
     let btn = e.target;
     let buttonLetter = btn.innerText;
@@ -105,7 +117,6 @@ function handleGuess(e) {
  * Checks indexof the current image, hides it and make the next visible 
  */
 function wrongGuess(randomWordArray) {
-      // selected letter isn't in the currentWordSplit
     triesLeft(); // decrement number of tries remaining
     hideImages(); // hide all hangman images
     let currentImage = document.getElementById(`img${userTry}`); // unhide the hangman image of the matching tries remaining
@@ -116,6 +127,11 @@ function wrongGuess(randomWordArray) {
         gameLost(randomWordArray);
     }
 
+    /**
+     * Called when game is lost. Sets game over to true and reveals the random word. 
+     * Disables all buttons and shows modal for feedback and how to restart the game.
+     * Current score is set back to 0.
+     */
     function gameLost(){
         gameOver = true;
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
@@ -135,6 +151,15 @@ function wrongGuess(randomWordArray) {
 }
 } 
 
+/**
+ * Checks if the placeholder array is fully guessed and reavelead and therefore equal to the randomWordArray.
+ * Calls addCurrentScore (adds to current score).
+ * Calls addHighScore (adds to highscore if current score is higher than highscore)
+ * Shows Modal as feedback.
+ * calls resetGame (resets all features, but current score)
+ * @param {string[]} placeholderArray // Array filled with underscores and correctly guessed letters in the length of the randomWordArray
+ * @param {string[]} randomWordArray  // random word split into an array of single letters.
+ */
 function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join("") === randomWordArray.join("")){
                 addCurrentScore();
@@ -155,21 +180,28 @@ function gameWon(placeholderArray, randomWordArray){
                   }
 }
 
+/**
+ * Decrements and displays userTry. Updates global variable.
+ */
 function triesLeft(){
-    // decrements and displays userTry.Updates global variable
     document.getElementById("tries").innerText =  userTry -1;
     userTry--;
     console.log("User tries left:" , userTry)
 }
 
+/**
+ * Increments and displays current score. Updates global variable.
+ */
 function addCurrentScore(){
-    // increments and displays current score.Updates global variable
     document.getElementById("current-score").innerText =  currentScore + 1;
     currentScore++;
     console.log("Current score:" , currentScore)
 }
 
-
+/**
+ * Retrieves highscore and sets it to current score if currentscore is higher than highscore.
+ * Dispalys new highscore and updates local storage.
+ */
 function addHighScore(){
     userScore = parseInt(localStorage.getItem("highscore"));
     if (currentScore > userScore)
@@ -179,6 +211,9 @@ function addHighScore(){
     console.log("UserScore:", userScore)
 }
 
+/**
+ * Iterates through all buttons and adds the disabled class as well as styling to visualize disabled state. 
+ */
 function disableButtons(){
    for(let btn of allButtons){
     btn.classList.add("disabled");
@@ -186,6 +221,9 @@ function disableButtons(){
    }
 }
 
+/**
+ * Iterates through all buttons and removes the disabled class and resets styling.
+ */
 function resetButtons(){
     for(let btn of allButtons){
     btn.classList.remove("disabled");
@@ -193,6 +231,9 @@ function resetButtons(){
     }
 }
 
+/**
+ * retrieves all hangman images and iterates through them to add the hidden class to each of them. 
+ */
 function hideImages() {
     // hide all hangman images
     let hangmanImages = document.querySelectorAll("#images img");
@@ -201,6 +242,14 @@ function hideImages() {
     }
 }
 
+/**
+ * Doesn't execute if game is over. 
+ * if game not over it empties the randomWordArray and placeHolderArray to prepeare for new game.
+ * Calls resetButtons (returns all buttons to initial state).
+ * resets user tries and hangman images to initial state.
+ * Calls gameStart (Initiates new game).
+ * @returns 
+ */
 function resetGame(){
     if(gameOver) return;
     let randomWordArray = [];
@@ -213,6 +262,13 @@ function resetGame(){
     gameStart();
 }
 
+/**
+ * Sets game over to false.
+ * Empties the randomWordArray and placeHolderArray to prepeare for new game.
+ * Calls resetButtons (returns all buttons to initial state).
+ * Resets user tries, current score and hangman images to initial state.
+ * Calls gameStart (Initiates new game).
+ */
 function restartGame(){
     gameOver = false;
     let randomWordArray = [];
@@ -224,9 +280,6 @@ function restartGame(){
     document.getElementById("current-score").innerText = currentScore;
     hideImages();
     document.getElementById("img6").classList.remove("hidden");
-    // localStorage.setItem("highscore", "0")
-    // // let userScore = parseInt(localStorage.getItem("highscore"));
-    // document.getElementById("highscore").innerText = userScore;
     gameStart();
 }
 
@@ -234,7 +287,12 @@ document.getElementById("reset-button").addEventListener("click", resetGame);
 document.getElementById("start-button").addEventListener("click", restartGame);
 
 document.getElementById("rules").addEventListener("click", clickGameRules);
+/**
+ * Opens Modal with Game rules after clicking anchor tag in Navbar.
+ * @param {Event} e 
+ */
 function clickGameRules(e){
+    // Prevent reload of page since eventlistener is added to an anchor tag.
     e.preventDefault();
         gameRuleText.innerHTML = `
        <p><strong>🎯 Goal:</strong><br>
@@ -269,6 +327,9 @@ function clickGameRules(e){
 }
 
 document.getElementById("reset-highscore").addEventListener("click", resetHighscore)
+/**
+ * Sets high score in local storage to 0, retrieves and displays it after reset Highsore was clicked in navbar.
+ */
 function resetHighscore(){
     localStorage.setItem("highscore", "0");
     resetHighscore = localStorage.getItem("highscore");
