@@ -17,6 +17,8 @@ let gameRuleText = document.getElementById("game-rule-text");
 let allButtons = [];
 let randomWordArray = [];
 let placeholderArray = [];
+
+let gameOver = false;
 // generate word and array with equal amount of charakters
 const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
 
@@ -115,6 +117,7 @@ function wrongGuess(randomWordArray) {
     }
 
     function gameLost(){
+        gameOver = true;
         document.getElementById("placeholder").innerText = randomWordArray.join("");   
        
         disableButtons();
@@ -199,6 +202,7 @@ function hideImages() {
 }
 
 function resetGame(){
+    if(gameOver) return;
     let randomWordArray = [];
     let placeholderArray = [];  
     resetButtons();
@@ -210,6 +214,7 @@ function resetGame(){
 }
 
 function restartGame(){
+    gameOver = false;
     let randomWordArray = [];
     let placeholderArray = [];  
     resetButtons();
