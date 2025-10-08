@@ -23,9 +23,9 @@ let gameOver = false;
 
 document.addEventListener("DOMContentLoaded",function(){
 
-    // Collapse navbar after link click (for mobile view) generated with chatGPT
-    document.querySelectorAll(".navbar-collapse .nav-link, .navbar-collapse .dropdown-item").forEach(link => {
-    link.addEventListener("click", function () {
+  // Collapse navbar after nav-link or dropdown-item click (mobile only)
+document.querySelectorAll(".navbar-collapse .nav-link:not(.dropdown-toggle), .navbar-collapse .dropdown-item").forEach(link => {
+  link.addEventListener("click", function () {
     const navbarCollapse = document.querySelector(".navbar-collapse");
     const isExpanded = navbarCollapse.classList.contains("show");
 
