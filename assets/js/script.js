@@ -24,6 +24,18 @@ const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "sy
 
 document.addEventListener("DOMContentLoaded",function(){
 
+    // Collapse navbar after link click (for mobile view) generated with chatGPT
+    document.querySelectorAll(".navbar-collapse .nav-link, .navbar-collapse .dropdown-item").forEach(link => {
+    link.addEventListener("click", function () {
+    const navbarCollapse = document.querySelector(".navbar-collapse");
+    const isExpanded = navbarCollapse.classList.contains("show");
+
+    if (isExpanded) {
+      new bootstrap.Collapse(navbarCollapse).hide();
+    }
+  });
+});
+
     let currentHighscore = localStorage.getItem("highscore");
     document.getElementById("highscore").innerText = currentHighscore;
 
