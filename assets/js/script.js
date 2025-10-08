@@ -5,6 +5,7 @@
 let userTry = 6;
 let currentScore = 0;
 let userScore = 0;
+let wordBank = wordBankMedium; 
 // Bootstrap modal
 const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
@@ -19,8 +20,6 @@ let randomWordArray = [];
 let placeholderArray = [];
 
 let gameOver = false;
-// generate word and array with equal amount of charakters
-const wordBank = ["puzzle", "interface", "variable", "function", "keyboard", "syntax", "boolean", "browser", "console", "network", "element", "closure", "callback", "array", "object", "script", "storage", "content", "element", "display"];
 
 document.addEventListener("DOMContentLoaded",function(){
 
