@@ -23,7 +23,7 @@ let gameOver = false;
 
 document.addEventListener("DOMContentLoaded",function(){
 
-  // Collapse navbar after nav-link or dropdown-item click (mobile only)
+  // Collapse navbar after nav-link or dropdown-item click (mobile only),ChatGPT output.
 document.querySelectorAll(".navbar-collapse .nav-link:not(.dropdown-toggle), .navbar-collapse .dropdown-item").forEach(link => {
   link.addEventListener("click", function () {
     const navbarCollapse = document.querySelector(".navbar-collapse");
@@ -346,4 +346,33 @@ function resetHighscore(){
     resetHighscore = localStorage.getItem("highscore");
     document.getElementById("highscore").innerText = resetHighscore;
     console.log("Reset highscore:", resetHighscore)
+}
+
+document.querySelectorAll(".dropdown-item").forEach(item => {
+    // for each dropdown item attach eventListener
+    item.addEventListener("click", function (){
+        difficulty = item.innerText.toLowerCase();
+        console.log(`User selected ${difficulty} difficulty`);
+        getDifficulty(difficulty);
+        // reset the game if user selects difficulty mid-game
+        resetGame();
+    })
+})
+
+/**
+ * Receives by user chosen difficulty level and assigns relevant wordbank"
+ * @param {string} difficulty 
+ */
+function getDifficulty(difficulty) {
+    switch (difficulty) {
+        case "easy":
+            wordBank = wordBankEasy;
+            break;
+        case "hard":
+            wordBank = wordBankHard;
+            break;
+        default:
+            wordBank = wordBankMedium;
+            break;
+    }
 }
