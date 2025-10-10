@@ -177,6 +177,9 @@ function gameWon(placeholderArray, randomWordArray){
                 let highscore = parseInt(localStorage.getItem("highscore"))
                
                 if(currentScore > highscore){
+                    // audio element code borrowed from https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement 
+                    const audioElement = new Audio("../assets/sounds/winning-sound.wav");
+                    audioElement.play();
                     modalTitle.innerHTML = "Congrats! New Highscore!";
                      modalText.innerHTML = `
                     You guessed <strong>${randomWordArray.join("")}</strong>.
