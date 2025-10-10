@@ -174,8 +174,21 @@ function wrongGuess(randomWordArray) {
 function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join("") === randomWordArray.join("")){
                 addCurrentScore();
-                addHighScore();
                 let highscore = parseInt(localStorage.getItem("highscore"))
+               
+                if(currentScore > highscore){
+                    modalTitle.innerHTML = "Congrats! New Highscore!";
+                     modalText.innerHTML = `
+                    You guessed <strong>${randomWordArray.join("")}</strong>.
+                    <br>
+                    Tries remaining: <strong>${userTry}</strong>.
+                    <br>
+                    Times won: <strong>${currentScore}</strong>.
+                    <br>
+                    Old Highscore: <strong>${highscore}</strong>
+                `;
+                 addHighScore();
+                }else{
                 modalTitle.innerHTML="<h2>Congrats!</h2>"
                 modalText.innerHTML = `
                     You guessed <strong>${randomWordArray.join("")}</strong>.
@@ -185,7 +198,7 @@ function gameWon(placeholderArray, randomWordArray){
                     Times won: <strong>${currentScore}</strong>.
                     <br>
                     Highscore: <strong>${highscore}</strong>
-                `;
+                `};
                 modalEndGame.show();
                 resetGame();
                   }
@@ -212,13 +225,21 @@ function addCurrentScore(){
 /**
  * Retrieves highscore and sets it to current score if currentscore is higher than highscore.
  * Dispalys new highscore and updates local storage.
+ * Gives user a feedback of throwing confetti once a new highscore was hit
  */
 function addHighScore(){
     userScore = parseInt(localStorage.getItem("highscore"));
-    if (currentScore > userScore)
+    if (currentScore > userScore){
+        // Confetti code found on https://www.kirilv.com/canvas-confetti/
+        confetti({
+        particleCount: 500,
+        spread: 200,
+        origin: { y: 0.6 }
+    });   
     userScore = currentScore;
     document.getElementById("highscore").innerText = userScore;
     localStorage.setItem("highscore", userScore);
+    }
     console.log("UserScore:", userScore)
 }
 
