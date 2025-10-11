@@ -13,7 +13,6 @@ let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
 
 const gameRules = new bootstrap.Modal(document.getElementById("game-rules"));
-let gameTitle = document.getElementById("game-title");
 let gameRuleText = document.getElementById("game-rule-text");
 
 let allButtons = [];
@@ -288,8 +287,8 @@ function hideImages() {
  */
 function resetGame(){
     if(gameOver) return;
-    let randomWordArray = [];
-    let placeholderArray = [];  
+    randomWordArray = [];
+    placeholderArray = [];  
     resetButtons();
     userTry = 6;
     document.getElementById("tries").innerText = userTry;
@@ -307,8 +306,8 @@ function resetGame(){
  */
 function restartGame(){
     gameOver = false;
-    let randomWordArray = [];
-    let placeholderArray = [];  
+    randomWordArray = [];
+    placeholderArray = [];  
     resetButtons();
     userTry = 6;
     document.getElementById("tries").innerText = userTry;
