@@ -1,4 +1,5 @@
 /* jshint esversion: 6 */
+/* global bootstrap, confetti, wordBankEasy, wordBankMedium, wordBankHard */
 /**
  * Creates Alphabet buttons and adds them to the DOM 
  */
@@ -149,7 +150,7 @@ function wrongGuess(randomWordArray) {
        
         disableButtons();
         // update modal text and then show modal
-        modalTitle.innerHTML="<h2>Game Over</h2>"
+        modalTitle.innerHTML="<h2>Game Over</h2>";
         modalText.innerHTML = `
         The correct word was <strong>${randomWordArray.join("")}</strong>.
         <br>
@@ -174,7 +175,7 @@ function wrongGuess(randomWordArray) {
 function gameWon(placeholderArray, randomWordArray){
     if(placeholderArray.join("") === randomWordArray.join("")){
                 addCurrentScore();
-                let highscore = parseInt(localStorage.getItem("highscore"))
+                let highscore = parseInt(localStorage.getItem("highscore"));
                
                 if(currentScore > highscore){
                     // audio element code borrowed from https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement 
@@ -192,7 +193,7 @@ function gameWon(placeholderArray, randomWordArray){
                 `;
                  addHighScore();
                 }else{
-                modalTitle.innerHTML="<h2>Congrats!</h2>"
+                modalTitle.innerHTML="<h2>Congrats!</h2>";
                 modalText.innerHTML = `
                     You guessed <strong>${randomWordArray.join("")}</strong>.
                     <br>
@@ -201,7 +202,7 @@ function gameWon(placeholderArray, randomWordArray){
                     Times won: <strong>${currentScore}</strong>.
                     <br>
                     Highscore: <strong>${highscore}</strong>
-                `};
+                `;}
                 modalEndGame.show();
                 resetGame();
                   }
@@ -213,7 +214,7 @@ function gameWon(placeholderArray, randomWordArray){
 function triesLeft(){
     document.getElementById("tries").innerText =  userTry -1;
     userTry--;
-    console.log("User tries left:" , userTry)
+    console.log("User tries left:" , userTry);
 }
 
 /**
@@ -222,7 +223,7 @@ function triesLeft(){
 function addCurrentScore(){
     document.getElementById("current-score").innerText =  currentScore + 1;
     currentScore++;
-    console.log("Current score:" , currentScore)
+    console.log("Current score:" , currentScore);
 }
 
 /**
@@ -243,7 +244,7 @@ function addHighScore(){
     document.getElementById("highscore").innerText = userScore;
     localStorage.setItem("highscore", userScore);
     }
-    console.log("UserScore:", userScore)
+    console.log("UserScore:", userScore);
 }
 
 /**
@@ -252,7 +253,7 @@ function addHighScore(){
 function disableButtons(){
    for(let btn of allButtons){
     btn.classList.add("disabled");
-    btn.style.background = "grey"
+    btn.style.background = "grey";
    }
 }
 
@@ -273,7 +274,7 @@ function hideImages() {
     // hide all hangman images
     let hangmanImages = document.querySelectorAll("#images img");
     for(let img of hangmanImages){
-        img.classList.add("hidden")
+        img.classList.add("hidden");
     }
 }
 
@@ -361,27 +362,27 @@ function clickGameRules(e){
         gameRules.show();
 }
 
-document.getElementById("reset-highscore").addEventListener("click", resetHighscore)
+document.getElementById("reset-highscore").addEventListener("click", resetHighscore);
 /**
  * Sets high score in local storage to 0, retrieves and displays it after reset Highsore was clicked in navbar.
  */
 function resetHighscore(){
     localStorage.setItem("highscore", "0");
-    resetHighscore = localStorage.getItem("highscore");
-    document.getElementById("highscore").innerText = resetHighscore;
-    console.log("Reset highscore:", resetHighscore)
+    let userHighscore = localStorage.getItem("highscore");
+    document.getElementById("highscore").innerText = userHighscore;
+    console.log("Reset highscore:", userHighscore);
 }
 
 document.querySelectorAll(".dropdown-item").forEach(item => {
     // for each dropdown item attach eventListener
     item.addEventListener("click", function (){
-        difficulty = item.innerText.toLowerCase();
+        let difficulty = item.innerText.toLowerCase();
         console.log(`User selected ${difficulty} difficulty`);
         getDifficulty(difficulty);
         // reset the game if user selects difficulty mid-game
         resetGame();
-    })
-})
+    });
+});
 
 /**
  * Receives by user chosen difficulty level and assigns relevant wordbank"
