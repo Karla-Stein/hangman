@@ -21,6 +21,10 @@ body{
     font-family: var(--secondary-font);
 }
 
+.navbar-collapse{
+    background-color: black;
+}
+
 /* Hangman-visual */
 #hangman-visual img{
     border-radius: 20px;
