@@ -292,6 +292,7 @@ function hideImages() {
  */
 function resetGame(){
     if(gameOver) return;
+    newDiv.classList.add("hidden");
     randomWordArray = [];
     placeholderArray = [];  
     resetButtons();
@@ -310,6 +311,7 @@ function resetGame(){
  * Calls gameStart (Initiates new game).
  */
 function restartGame(){
+    newDiv.classList.add("hidden");
     gameOver = false;
     randomWordArray = [];
     placeholderArray = [];  
