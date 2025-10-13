@@ -1,8 +1,6 @@
 /* jshint esversion: 6 */
 /* global bootstrap, confetti, wordBankEasy, wordBankMedium, wordBankHard */
-/**
- * Creates Alphabet buttons and adds them to the DOM 
- */
+
 let userTry = 6;
 let currentScore = 0;
 let userScore = 0;
@@ -15,11 +13,16 @@ let modalText = document.getElementById("modal-text");
 const gameRules = new bootstrap.Modal(document.getElementById("game-rules"));
 let gameRuleText = document.getElementById("game-rule-text");
 
+const hints = new bootstrap.Modal(document.getElementById("hint-modal"));
+let hintModalText = document.getElementById("hint-modal-body")
+
 let allButtons = [];
 let randomWordArray = [];
 let placeholderArray = [];
-
 let gameOver = false;
+let wordBankIndex = 0;
+let difficulty = "medium";
+let newDiv = document.createElement("div");
 
 document.addEventListener("DOMContentLoaded",function(){
 
@@ -88,7 +91,7 @@ gameStart();
     hideImages();
     document.getElementById("img6").classList.remove("hidden");
 
-    const wordBankIndex = Math.floor(Math.random() * wordBank.length);
+    wordBankIndex = Math.floor(Math.random() * wordBank.length);
     randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
     placeholderArray = new Array(randomWordArray.length).fill("_ ");
     document.getElementById("placeholder").innerText = placeholderArray.join("");
@@ -136,6 +139,8 @@ function wrongGuess(randomWordArray) {
     if (userTry === 0) {
         // user ran out of tries; game over
         gameLost(randomWordArray);
+    }else if(userTry === 1){
+      showHint();
     }
 
     /**
@@ -343,6 +348,7 @@ function clickGameRules(e){
        <ul>
          <li>You have <strong>6 tries</strong>.</li>
          <li>Every wrong guess reveals a <strong>new part of the hangman</strong>.</li>
+         <li>If you're down to your <strong>last try</strong>, you’ll get the option to reveal a <strong>hint</strong></li>
          <li>If all 6 parts are revealed before the word is guessed, <strong>you lose</strong>, and the <strong>correct word will be shown</strong>.</li>
        </ul>
        <h3>✅ Winning & Scoring</h3>
@@ -375,7 +381,7 @@ function resetHighscore(){
 document.querySelectorAll(".dropdown-item").forEach(item => {
     // for each dropdown item attach eventListener
     item.addEventListener("click", function (){
-        let difficulty = item.innerText.toLowerCase();
+        difficulty = item.innerText.toLowerCase();
         console.log(`User selected ${difficulty} difficulty`);
         getDifficulty(difficulty);
         // reset the game if user selects difficulty mid-game
@@ -399,4 +405,25 @@ function getDifficulty(difficulty) {
             wordBank = Object.keys(wordBankMedium);
             break;
     }
+}
+
+function showHint() {
+       newDiv.classList.remove("hidden");
+        newDiv.classList.add("col-12","pt-4");
+        newDiv.style.fontFamily = "Monteserrat", "sans-serif"
+        newDiv.innerText = "CLICK HERE FOR A HINT";
+        let div = document.getElementById("tries-container");
+        div.appendChild(newDiv);
+        newDiv.addEventListener("click", function(){
+            let key = wordBank[wordBankIndex]
+            if(difficulty === "easy"){
+                hintModalText.innerText = `${wordBankEasy[key]}`;
+            }else if(difficulty === "medium"){
+                hintModalText.innerText = `${wordBankMedium[key]}`;
+            }else{
+                hintModalText.innerText = `${wordBankHard[key]}`;
+            } 
+            hints.show();
+            newDiv.classList.add("hidden");
+        })
 }
