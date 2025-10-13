@@ -25,3 +25,26 @@ As someone transitioning into web development, this project gave me the opportun
 
 source: [hangman amiresponsive](https://ui.dev/amiresponsive?url=https://karla-stein.github.io/hangman)
 
+## UX
+
+### The 5 Planes of UX
+
+#### 1. Strategy
+
+**Purpose**
+-	Bring the nostalgic, classic game of Hangman into a modern and digital format.
+-	Create a fun, interactive experience that helps users practice word recognition and memory.
+-	Provide simple but engaging gameplay with responsive feedback and a choice of difficulty levels to encourage replay.
+
+
+**Primary User Needs**
+-	Easily start and play the game without needing instructions, however game rules are available and easily found.
+-	See clear visual feedback for correct and incorrect guesses.
+-	Track performance (score and highscore) to stay motivated.
+-	Select preferred difficulty to match their skill level or mood.
+
+
+**Business/Project Goals**
+-	Showcase a JavaScript project using real-world programming concepts like DOM manipulation, conditionals, event listeners, arrays and local storage.
+-	Demonstrate how gameplay and UX can be enhanced using visual/audio feedback like animations, modals, sound, and confetti.
+-	Offer a fun, accessible game that could serve educational or entertainment purposes for children and adults alike.
