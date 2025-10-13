@@ -81,7 +81,7 @@ source: [hangman amiresponsive](https://ui.dev/amiresponsive?url=https://karla-s
   - The *on-screen keyboard* is centered at the bottom for intuitive interaction.  
   - *Feedback modals* appear above all other elements, providing win/loss updates and rules.
 
-  **User Flow**
+-  **User Flow**
 
 1. User lands on the homepage and sees the game title and highscore.
 2. Reads game rules (optional) via the navbar link.
@@ -96,3 +96,14 @@ source: [hangman amiresponsive](https://ui.dev/amiresponsive?url=https://karla-s
 9. Game provides a new round with every correct guess.
 10. User can choose to start a new round or reset the game/highscore.
 
+
+#### 4. Skeleton
+
+**Wire Frames** 
+
+To follow best practice, wireframes were developed for mobile, tablet, and desktop sizes.
+I've used [Balsamiq](https://balsamiq.com) to design my site wireframes.
+
+| Mobile | Tablet | Desktop |
+| --- | --- | --- |
+| ![screenshot](documentation/wireframes/mobile.jpeg) | ![screenshot](documentation/wireframes/tablet.jpeg) | ![screenshot](documentation/wireframes/desktop.jpeg) |
