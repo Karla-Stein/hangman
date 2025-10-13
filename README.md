@@ -32,19 +32,51 @@ source: [hangman amiresponsive](https://ui.dev/amiresponsive?url=https://karla-s
 #### 1. Strategy
 
 **Purpose**
--	Bring the nostalgic, classic game of Hangman into a modern and digital format.
--	Create a fun, interactive experience that helps users practice word recognition and memory.
--	Provide simple but engaging gameplay with responsive feedback and a choice of difficulty levels to encourage replay.
+- Bring the nostalgic, classic game of Hangman into a modern and digital format.
+- Create a fun, interactive experience that helps users practice word recognition and memory.
+- Provide simple but engaging gameplay with responsive feedback and a choice of difficulty levels to encourage replay.
 
 
 **Primary User Needs**
--	Easily start and play the game without needing instructions, however game rules are available and easily found.
--	See clear visual feedback for correct and incorrect guesses.
--	Track performance (score and highscore) to stay motivated.
--	Select preferred difficulty to match their skill level or mood.
+- Easily start and play the game without needing instructions, however game rules are available and easily found.
+- See clear visual feedback for correct and incorrect guesses.
+- Track performance (score and highscore) to stay motivated.
+- Select preferred difficulty to match their skill level or mood.
 
 
 **Business/Project Goals**
--	Showcase a JavaScript project using real-world programming concepts like DOM manipulation, conditionals, event listeners, arrays and local storage.
--	Demonstrate how gameplay and UX can be enhanced using visual/audio feedback like animations, modals, sound, and confetti.
--	Offer a fun, accessible game that could serve educational or entertainment purposes for children and adults alike.
+- Showcase a JavaScript project using real-world programming concepts like DOM manipulation, conditionals, event listeners, arrays and local storage.
+- Demonstrate how gameplay and UX can be enhanced using visual/audio feedback like animations, modals, sound, and confetti.
+- Offer a fun, accessible game that could serve educational or entertainment purposes for children and adults alike.
+
+
+#### 2. Scope
+
+**[Features](#features)** (see below)
+
+**Content Requirements**
+
+- Clear labels for navigation elements (*Start Game*, *Reset Game*, *Choose Difficulty*).  
+- Visual representation of tries remaining (hangman image and number of tries).
+- Underscore placeholders to show how many letters the word contains.
+- On-screen QWERTY keyboard for letter selection.
+- Feedback messages via modal dialogs after win or loss.
+- Display of current score and highscore for performance tracking.
+- Dropdown to select difficulty level (*Easy*, *Medium*, *Hard*).
+- Game rules for player that dont know the game.
+
+#### 3. Structure
+
+**Information Architecture**
+
+- **Navigation Menu**:  
+  - A simple Bootsrap navbar containing links to *Start Game*, *Reset Game*, *Reset Highscore*, *Game Rules*, and a *Difficulty Dropdown* (Easy, Medium, Hard).  
+  - The navbar collapses into a mobile-friendly burger menu on smaller screens.
+
+- **Hierarchy**:  
+  - The *game title* and *highscore display* are placed prominently at the top for instant visibility.  
+  - The *hangman image section* visually represents progress and sits above the interactive gameplay area.  
+  - The *placeholder section* (underscores) clearly shows the word length.  
+  - The *tries left* and *current score* indicators are displayed near the guessing area for easy tracking.  
+  - The *on-screen keyboard* is centered at the bottom for intuitive interaction.  
+  - *Feedback modals* appear above all other elements, providing win/loss updates and rules.
