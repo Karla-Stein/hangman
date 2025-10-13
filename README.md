@@ -80,3 +80,19 @@ source: [hangman amiresponsive](https://ui.dev/amiresponsive?url=https://karla-s
   - The *tries left* and *current score* indicators are displayed near the guessing area for easy tracking.  
   - The *on-screen keyboard* is centered at the bottom for intuitive interaction.  
   - *Feedback modals* appear above all other elements, providing win/loss updates and rules.
+
+  **User Flow**
+
+1. User lands on the homepage and sees the game title and highscore.
+2. Reads game rules (optional) via the navbar link.
+3. Selects a difficulty level from the dropdown (Easy, Medium, Hard).
+4. Clicks "Start Game" to begin a new round.
+5. Guesses letters by clicking the on-screen keyboard.
+6. Sees visual feedback:
+   - Correct guesses reveal letters.
+   - Incorrect guesses reveal hangman parts and reduce tries.
+7. Wins by guessing the full word or loses after 6 incorrect tries.
+8. Views a modal with win/loss feedback and current score.
+9. Game provides a new round with every correct guess.
+10. User can choose to start a new round or reset the game/highscore.
+
