@@ -107,3 +107,32 @@ I've used [Balsamiq](https://balsamiq.com) to design my site wireframes.
 | Mobile | Tablet | Desktop |
 | --- | --- | --- |
 | ![screenshot](documentation/wireframes/mobile.jpeg) | ![screenshot](documentation/wireframes/tablet.jpeg) | ![screenshot](documentation/wireframes/desktop.jpeg) |
+
+
+#### 5. Surface
+
+The visual design of the game is intentionally minimalistic.
+
+To enhance user satisfaction and provide a sense of achievement, I included a **confetti animation** when a new high score is reached. This small celebratory detail brings delight to the user and reinforces progress in a fun, memorable way.
+
+**Visual Design Elements**
+- **[Colours](#colour-scheme)** (see below)
+- **[Typography](#typography)** (see below)
+
+### Colour Scheme
+
+For this project, I intentionally chose a **black-and-white colour scheme** to keep the visual experience clean and distraction-free.
+
+The minimalist aesthetic supports clarity and usability, allowing players to focus entirely on the core objective: guessing the word.  
+This approach also enhances accessibility by ensuring high contrast between text, buttons and background elements.
+
+No accent colours or gradients were used. The simplicity of the design aligns with the classic and nostalgic feel of the Hangman game.
+
+### Typography
+
+Two fonts from [Google Fonts](https://fonts.google.com/) were used to enhance the visual identity of the game:
+
+- [**Indie Flower**](https://fonts.google.com/specimen/Indie+Flower) was used for the primary font, giving the game a playful, handwritten feel that reflects the nostalgic and fun theme of Hangman.
+- [**Montserrat**](https://fonts.google.com/specimen/Montserrat) was used as the secondary font for clean, easy-to-read supporting text, such as navigation links, game rules, highscore and buttons.
+
+The combination of these fonts adds a balance between personality and clarity, aligning with the game's overall aesthetic of simplicity and fun.
