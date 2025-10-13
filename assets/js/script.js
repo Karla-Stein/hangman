@@ -6,7 +6,7 @@
 let userTry = 6;
 let currentScore = 0;
 let userScore = 0;
-let wordBank = wordBankMedium; 
+let wordBank = Object.keys(wordBankMedium); 
 // Bootstrap modal
 const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
 let modalTitle = document.getElementById("modal-title");
@@ -390,13 +390,13 @@ document.querySelectorAll(".dropdown-item").forEach(item => {
 function getDifficulty(difficulty) {
     switch (difficulty) {
         case "easy":
-            wordBank = wordBankEasy;
+            wordBank = Object.keys(wordBankEasy);
             break;
         case "hard":
-            wordBank = wordBankHard;
+            wordBank = Object.keys(wordBankHard);
             break;
         default:
-            wordBank = wordBankMedium;
+            wordBank = Object.keys(wordBankMedium);
             break;
     }
 }
