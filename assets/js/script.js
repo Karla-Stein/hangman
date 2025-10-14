@@ -1,4 +1,4 @@
-/* jshint esversion: 6 */
+/* jshint esversion: 11*/
 /* global bootstrap, confetti, wordBankEasy, wordBankMedium, wordBankHard */
 
 let userTry = 6;
