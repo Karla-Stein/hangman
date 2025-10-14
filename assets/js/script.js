@@ -98,6 +98,21 @@ gameStart();
      console.log(randomWordArray);
 }
 
+/**
+ * Handle keyboard typing.
+ * Listens for A-Z typing, and triggers a simulated click on the visual keyboard.
+ */
+// with help from my mentor
+document.addEventListener("keydown", (e) => {
+  const key = e.key.toUpperCase();
+  // Check if the key is a valid alpha character A-Z (RegEx test)
+  if (/^[A-Z]$/.test(key)) {
+    // Find the matching button (if one exists)
+    const btn = [...allButtons].find(b => b.innerText === key);
+    // If the button exists, simulate a click event object
+    if (btn) handleGuess({ target: btn });
+  }
+});
         
  /**
   * Handles the click event for letter buttons during the game.
