@@ -412,7 +412,9 @@ function getDifficulty(difficulty) {
 function showHint() {
        newDiv.classList.remove("hidden");
         newDiv.classList.add("col-12","pt-4");
-        newDiv.style.fontFamily = "Monteserrat", "sans-serif"
+        newDiv.style.fontFamily = "Monteserrat, sans-serif";
+        newDiv.classList.add("pulse");
+        newDiv.style.color = "#98C379"
         newDiv.innerText = "CLICK HERE FOR A HINT";
         let div = document.getElementById("tries-container");
         div.appendChild(newDiv);

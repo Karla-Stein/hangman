@@ -79,6 +79,26 @@ body{
     font-family: var(--secondary-font);
 }
 
+/* Hint animation */
+@keyframes pulse {
+  0% {
+    transform: scale(1);     /* start at normal size */
+    opacity: 1;              /* fully visible */
+  }
+  50% {
+    transform: scale(1.05);  /* slightly grow */
+    opacity: 0.75;              /* fade slightly*/
+    
+  }
+  100% {
+    transform: scale(1);     /* go back to normal size */
+    opacity: 1;
+  }
+}
+
+.pulse{
+    animation: pulse 1.2s infinite;
+}
 /* Media queries */
 @media screen and (max-width: 768px){
     .btn{
