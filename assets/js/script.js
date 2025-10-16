@@ -6,14 +6,37 @@ let currentScore = 0;
 let userScore = 0;
 let wordBank = Object.keys(wordBankMedium); 
 // Bootstrap modal
-const modalEndGame = new bootstrap.Modal(document.getElementById("end-game"));
+const endGameEl = document.getElementById('end-game');
+const modalEndGame = new bootstrap.Modal(endGameEl);
+// defuse focus before hiding kicks in to fix the console warning for the modal
+endGameEl.addEventListener("hide.bs.modal", () => {
+  if (endGameEl.contains(document.activeElement)) {
+    document.activeElement.blur();        // move focus out of the soon-to-be-hidden modal
+  }
+});
 let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
 
-const gameRules = new bootstrap.Modal(document.getElementById("game-rules"));
+// Game rule modal
+const gameRuleEl = document.getElementById("game-rules");
+const gameRules = new bootstrap.Modal(gameRuleEl);
+// defuse focus before hiding kicks in to fix the console warning for the modal
+gameRuleEl.addEventListener("hide.bs.modal", () => {
+  if (gameRuleEl.contains(document.activeElement)) {
+    document.activeElement.blur();        // move focus out of the soon-to-be-hidden modal
+  }
+});
 let gameRuleText = document.getElementById("game-rule-text");
 
-const hints = new bootstrap.Modal(document.getElementById("hint-modal"));
+// Hint modal
+const hintModalEl = document.getElementById("hint-modal");
+const hints = new bootstrap.Modal(hintModalEl);
+// defuse focus before hiding kicks in to fix the console warning for the modal
+hintModalEl.addEventListener("hide.bs.modal", () => {
+  if (hintModalEl.contains(document.activeElement)) {
+    document.activeElement.blur();        
+  }
+});
 let hintModalText = document.getElementById("hint-modal-body")
 
 let allButtons = [];
