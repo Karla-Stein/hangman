@@ -4,15 +4,15 @@
 let userTry = 6;
 let currentScore = 0;
 let userScore = 0;
-let wordBank = Object.keys(wordBankMedium); 
+let wordBank = Object.keys(wordBankMedium);
 // Bootstrap modal
 const endGameEl = document.getElementById('end-game');
 const modalEndGame = new bootstrap.Modal(endGameEl);
 // defuse focus before hiding kicks in to fix the console warning for the modal
 endGameEl.addEventListener("hide.bs.modal", () => {
-  if (endGameEl.contains(document.activeElement)) {
-    document.activeElement.blur();        // move focus out of the soon-to-be-hidden modal
-  }
+    if (endGameEl.contains(document.activeElement)) {
+        document.activeElement.blur(); // move focus out of the soon-to-be-hidden modal
+    }
 });
 let modalTitle = document.getElementById("modal-title");
 let modalText = document.getElementById("modal-text");
@@ -22,9 +22,9 @@ const gameRuleEl = document.getElementById("game-rules");
 const gameRules = new bootstrap.Modal(gameRuleEl);
 // defuse focus before hiding kicks in to fix the console warning for the modal
 gameRuleEl.addEventListener("hide.bs.modal", () => {
-  if (gameRuleEl.contains(document.activeElement)) {
-    document.activeElement.blur();        // move focus out of the soon-to-be-hidden modal
-  }
+    if (gameRuleEl.contains(document.activeElement)) {
+        document.activeElement.blur(); // move focus out of the soon-to-be-hidden modal
+    }
 });
 let gameRuleText = document.getElementById("game-rule-text");
 
@@ -33,9 +33,9 @@ const hintModalEl = document.getElementById("hint-modal");
 const hints = new bootstrap.Modal(hintModalEl);
 // defuse focus before hiding kicks in to fix the console warning for the modal
 hintModalEl.addEventListener("hide.bs.modal", () => {
-  if (hintModalEl.contains(document.activeElement)) {
-    document.activeElement.blur();        
-  }
+    if (hintModalEl.contains(document.activeElement)) {
+        document.activeElement.blur();
+    }
 });
 let hintModalText = document.getElementById("hint-modal-body")
 
@@ -47,71 +47,71 @@ let wordBankIndex = 0;
 let difficulty = "medium";
 let newDiv = document.createElement("div");
 
-document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-  // Collapse navbar after nav-link or dropdown-item click (mobile only),ChatGPT output.
-document.querySelectorAll(".navbar-collapse .nav-link:not(.dropdown-toggle), .navbar-collapse .dropdown-item").forEach(link => {
-  link.addEventListener("click", function () {
-    const navbarCollapse = document.querySelector(".navbar-collapse");
-    const isExpanded = navbarCollapse.classList.contains("show");
+    // Collapse navbar after nav-link or dropdown-item click (mobile only),ChatGPT output.
+    document.querySelectorAll(".navbar-collapse .nav-link:not(.dropdown-toggle), .navbar-collapse .dropdown-item").forEach(link => {
+        link.addEventListener("click", function () {
+            const navbarCollapse = document.querySelector(".navbar-collapse");
+            const isExpanded = navbarCollapse.classList.contains("show");
 
-    if (isExpanded) {
-      new bootstrap.Collapse(navbarCollapse).hide();
-    }
-  });
-});
+            if (isExpanded) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
+        });
+    });
 
-     // set localStorage "highscore" to 0 if none exists on game-load. 
+    // set localStorage "highscore" to 0 if none exists on game-load. 
     if (!localStorage.getItem("highscore")) {
-      localStorage.setItem("highscore", "0");
-    } 
+        localStorage.setItem("highscore", "0");
+    }
     let currentHighscore = localStorage.getItem("highscore");
     document.getElementById("highscore").innerText = currentHighscore;
 
     // Create on-screen keyboard layout using QWERTY rows
     const qwertyLayout = [
-  ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
-  ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
-  ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
-];
-     // Each character is turned into a styled button and added to the appropriate row container
-    for (let char of qwertyLayout[0]){
-       let button =  document.createElement("button");
-       button.classList.add("btn", "btn-light", "btn-lg");
-       button.innerText = char;
-       button.setAttribute("type","button");
-       document.getElementById("buttons-1").appendChild(button);  
-    } 
-    for (let char of qwertyLayout[1]){
-       let button =  document.createElement("button");
-       button.classList.add("btn", "btn-light", "btn-lg");
-       button.innerText = char;
-       button.setAttribute("type","button");
-       document.getElementById("buttons-2").appendChild(button);  
-    } 
-    for (let char of qwertyLayout[2]){
-       let button =  document.createElement("button");
-       button.classList.add("btn", "btn-light", "btn-lg");
-       button.innerText = char;
-       button.setAttribute("type","button");
-       document.getElementById("buttons-3").appendChild(button);  
-    } 
-allButtons = document.querySelectorAll("#button-container button");
+        ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P'],
+        ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L'],
+        ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+    ];
+    // Each character is turned into a styled button and added to the appropriate row container
+    for (let char of qwertyLayout[0]) {
+        let button = document.createElement("button");
+        button.classList.add("btn", "btn-light", "btn-lg");
+        button.innerText = char;
+        button.setAttribute("type", "button");
+        document.getElementById("buttons-1").appendChild(button);
+    }
+    for (let char of qwertyLayout[1]) {
+        let button = document.createElement("button");
+        button.classList.add("btn", "btn-light", "btn-lg");
+        button.innerText = char;
+        button.setAttribute("type", "button");
+        document.getElementById("buttons-2").appendChild(button);
+    }
+    for (let char of qwertyLayout[2]) {
+        let button = document.createElement("button");
+        button.classList.add("btn", "btn-light", "btn-lg");
+        button.innerText = char;
+        button.setAttribute("type", "button");
+        document.getElementById("buttons-3").appendChild(button);
+    }
+    allButtons = document.querySelectorAll("#button-container button");
 
-// Attach listeners ONCE to all buttons
-for (let btn of allButtons) {
-    btn.addEventListener("click", handleGuess);
-}
+    // Attach listeners ONCE to all buttons
+    for (let btn of allButtons) {
+        btn.addEventListener("click", handleGuess);
+    }
 
-// Start the first game
-gameStart();
+    // Start the first game
+    gameStart();
 });
 /**
  * Start of the game. Get random number of array length to use as index for the randomWordArray.
  * Creates array and fills with underscores equal to the random word chosen.
  * Displays underscores.
  */
-   function gameStart() {
+function gameStart() {
     resetButtons();
     userTry = 6;
     document.getElementById("tries").innerText = userTry;
@@ -122,7 +122,7 @@ gameStart();
     randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
     placeholderArray = new Array(randomWordArray.length).fill("_ ");
     document.getElementById("placeholder").innerText = placeholderArray.join("");
-     console.log(randomWordArray);
+    console.log(randomWordArray);
 }
 
 /**
@@ -131,23 +131,25 @@ gameStart();
  */
 // with help from my mentor
 document.addEventListener("keydown", (e) => {
-  const key = e.key.toUpperCase();
-  // Check if the key is a valid alpha character A-Z (RegEx test)
-  if (/^[A-Z]$/.test(key)) {
-    // Find the matching button (if one exists)
-    const btn = [...allButtons].find(b => b.innerText === key);
-    // If the button exists, simulate a click event object
-    if (btn) handleGuess({ target: btn });
-  }
+    const key = e.key.toUpperCase();
+    // Check if the key is a valid alpha character A-Z (RegEx test)
+    if (/^[A-Z]$/.test(key)) {
+        // Find the matching button (if one exists)
+        const btn = [...allButtons].find(b => b.innerText === key);
+        // If the button exists, simulate a click event object
+        if (btn) handleGuess({
+            target: btn
+        });
+    }
 });
-        
- /**
-  * Handles the click event for letter buttons during the game.
-  * Retrieves the letter the button represents.
-  * Disables the button after it is clicked.
-  * Checks if the letter was in the random word and calls either wrongGuess or gameWon.
-  * @param {Event} e 
-  */    
+
+/**
+ * Handles the click event for letter buttons during the game.
+ * Retrieves the letter the button represents.
+ * Disables the button after it is clicked.
+ * Checks if the letter was in the random word and calls either wrongGuess or gameWon.
+ * @param {Event} e 
+ */
 function handleGuess(e) {
     let btn = e.target;
     let buttonLetter = btn.innerText;
@@ -181,8 +183,8 @@ function wrongGuess(randomWordArray) {
     if (userTry === 0) {
         // user ran out of tries; game over
         gameLost(randomWordArray);
-    }else if(userTry === 1){
-      showHint();
+    } else if (userTry === 1) {
+        showHint();
     }
 
     /**
@@ -190,13 +192,13 @@ function wrongGuess(randomWordArray) {
      * Disables all buttons and shows modal for feedback and how to restart the game.
      * Current score is set back to 0.
      */
-    function gameLost(){
+    function gameLost() {
         gameOver = true;
-        document.getElementById("placeholder").innerText = randomWordArray.join("");   
-       
+        document.getElementById("placeholder").innerText = randomWordArray.join("");
+
         disableButtons();
         // update modal text and then show modal
-        modalTitle.innerHTML="<h2>Game Over</h2>";
+        modalTitle.innerHTML = "<h2>Game Over</h2>";
         modalText.innerHTML = `
         The correct word was <strong>${randomWordArray.join("")}</strong>.
         <br>
@@ -206,8 +208,8 @@ function wrongGuess(randomWordArray) {
         modalEndGame.show();
         currentScore = 0;
         document.getElementById("current-score").innerText = currentScore;
+    }
 }
-} 
 
 /**
  * Checks if the placeholder array is fully guessed and reavelead and therefore equal to the randomWordArray.
@@ -218,17 +220,17 @@ function wrongGuess(randomWordArray) {
  * @param {string[]} placeholderArray // Array filled with underscores and correctly guessed letters in the length of the randomWordArray
  * @param {string[]} randomWordArray  // random word split into an array of single letters.
  */
-function gameWon(placeholderArray, randomWordArray){
-    if(placeholderArray.join("") === randomWordArray.join("")){
-                addCurrentScore();
-                let highscore = parseInt(localStorage.getItem("highscore"));
-               
-                if(currentScore > highscore){
-                    // audio element code borrowed from https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement 
-                    const audioElement = new Audio("../assets/sounds/winning-sound.wav");
-                    audioElement.play();
-                    modalTitle.innerHTML = "Congrats! New Highscore!";
-                     modalText.innerHTML = `
+function gameWon(placeholderArray, randomWordArray) {
+    if (placeholderArray.join("") === randomWordArray.join("")) {
+        addCurrentScore();
+        let highscore = parseInt(localStorage.getItem("highscore"));
+
+        if (currentScore > highscore) {
+            // audio element code borrowed from https://developer.mozilla.org/en-US/docs/Web/API/HTMLAudioElement 
+            const audioElement = new Audio("../assets/sounds/winning-sound.wav");
+            audioElement.play();
+            modalTitle.innerHTML = "Congrats! New Highscore!";
+            modalText.innerHTML = `
                     You guessed <strong>${randomWordArray.join("")}</strong>.
                     <br>
                     Tries remaining: <strong>${userTry}</strong>.
@@ -237,10 +239,10 @@ function gameWon(placeholderArray, randomWordArray){
                     <br>
                     Old Highscore: <strong>${highscore}</strong>
                 `;
-                 addHighScore();
-                }else{
-                modalTitle.innerHTML="<h2>Congrats!</h2>";
-                modalText.innerHTML = `
+            addHighScore();
+        } else {
+            modalTitle.innerHTML = "<h2>Congrats!</h2>";
+            modalText.innerHTML = `
                     You guessed <strong>${randomWordArray.join("")}</strong>.
                     <br>
                     Tries remaining: <strong>${userTry}</strong>.
@@ -248,28 +250,29 @@ function gameWon(placeholderArray, randomWordArray){
                     Times won: <strong>${currentScore}</strong>.
                     <br>
                     Highscore: <strong>${highscore}</strong>
-                `;}
-                modalEndGame.show();
-                resetGame();
-                  }
+                `;
+        }
+        modalEndGame.show();
+        resetGame();
+    }
 }
 
 /**
  * Decrements and displays userTry. Updates global variable.
  */
-function triesLeft(){
-    document.getElementById("tries").innerText =  userTry -1;
+function triesLeft() {
+    document.getElementById("tries").innerText = userTry - 1;
     userTry--;
-    console.log("User tries left:" , userTry);
+    console.log("User tries left:", userTry);
 }
 
 /**
  * Increments and displays current score. Updates global variable.
  */
-function addCurrentScore(){
-    document.getElementById("current-score").innerText =  currentScore + 1;
+function addCurrentScore() {
+    document.getElementById("current-score").innerText = currentScore + 1;
     currentScore++;
-    console.log("Current score:" , currentScore);
+    console.log("Current score:", currentScore);
 }
 
 /**
@@ -277,18 +280,20 @@ function addCurrentScore(){
  * Dispalys new highscore and updates local storage.
  * Gives user a feedback of throwing confetti once a new highscore was hit
  */
-function addHighScore(){
+function addHighScore() {
     userScore = parseInt(localStorage.getItem("highscore"));
-    if (currentScore > userScore){
+    if (currentScore > userScore) {
         // Confetti code found on https://www.kirilv.com/canvas-confetti/
         confetti({
-        particleCount: 500,
-        spread: 200,
-        origin: { y: 0.6 }
-    });   
-    userScore = currentScore;
-    document.getElementById("highscore").innerText = userScore;
-    localStorage.setItem("highscore", userScore);
+            particleCount: 500,
+            spread: 200,
+            origin: {
+                y: 0.6
+            }
+        });
+        userScore = currentScore;
+        document.getElementById("highscore").innerText = userScore;
+        localStorage.setItem("highscore", userScore);
     }
     console.log("UserScore:", userScore);
 }
@@ -296,20 +301,20 @@ function addHighScore(){
 /**
  * Iterates through all buttons and adds the disabled class as well as styling to visualize disabled state. 
  */
-function disableButtons(){
-   for(let btn of allButtons){
-    btn.classList.add("disabled");
-    btn.style.background = "grey";
-   }
+function disableButtons() {
+    for (let btn of allButtons) {
+        btn.classList.add("disabled");
+        btn.style.background = "grey";
+    }
 }
 
 /**
  * Iterates through all buttons and removes the disabled class and resets styling.
  */
-function resetButtons(){
-    for(let btn of allButtons){
-    btn.classList.remove("disabled");
-    btn.style.background = "white";
+function resetButtons() {
+    for (let btn of allButtons) {
+        btn.classList.remove("disabled");
+        btn.style.background = "white";
     }
 }
 
@@ -319,7 +324,7 @@ function resetButtons(){
 function hideImages() {
     // hide all hangman images
     let hangmanImages = document.querySelectorAll("#images img");
-    for(let img of hangmanImages){
+    for (let img of hangmanImages) {
         img.classList.add("hidden");
     }
 }
@@ -332,11 +337,11 @@ function hideImages() {
  * Calls gameStart (Initiates new game).
  * @returns 
  */
-function resetGame(){
-    if(gameOver) return;
+function resetGame() {
+    if (gameOver) return;
     newDiv.classList.add("hidden");
     randomWordArray = [];
-    placeholderArray = [];  
+    placeholderArray = [];
     resetButtons();
     userTry = 6;
     document.getElementById("tries").innerText = userTry;
@@ -352,11 +357,11 @@ function resetGame(){
  * Resets user tries, current score and hangman images to initial state.
  * Calls gameStart (Initiates new game).
  */
-function restartGame(){
+function restartGame() {
     newDiv.classList.add("hidden");
     gameOver = false;
     randomWordArray = [];
-    placeholderArray = [];  
+    placeholderArray = [];
     resetButtons();
     userTry = 6;
     document.getElementById("tries").innerText = userTry;
@@ -375,10 +380,10 @@ document.getElementById("rules").addEventListener("click", clickGameRules);
  * Opens Modal with Game rules after clicking anchor tag in Navbar.
  * @param {Event} e 
  */
-function clickGameRules(e){
+function clickGameRules(e) {
     // Prevent reload of page since eventlistener is added to an anchor tag.
     e.preventDefault();
-        gameRuleText.innerHTML = `
+    gameRuleText.innerHTML = `
        <p><strong>🎯 Goal:</strong><br>
        Guess the word correctly and aim to <strong>beat your current Highscore</strong>!</p>
        <hr>
@@ -407,15 +412,15 @@ function clickGameRules(e){
          <li><strong>Reset Game</strong>: Starts a new round with a new word and <strong>6 fresh tries</strong>, <em>but keeps your current score</em> so you can keep trying to beat your Highscore.</li>
          <li><strong>Reset Highscore</strong>: Clears your saved highscore from the browser so you can start fresh.</li>
        </ul>`;
-           
-        gameRules.show();
+
+    gameRules.show();
 }
 
 document.getElementById("reset-highscore").addEventListener("click", resetHighscore);
 /**
  * Sets high score in local storage to 0, retrieves and displays it after reset Highsore was clicked in navbar.
  */
-function resetHighscore(){
+function resetHighscore() {
     localStorage.setItem("highscore", "0");
     let userHighscore = localStorage.getItem("highscore");
     document.getElementById("highscore").innerText = userHighscore;
@@ -425,7 +430,7 @@ function resetHighscore(){
 // // Attach click event to each dropdown item (Easy, Medium, Hard)
 document.querySelectorAll(".dropdown-item").forEach(item => {
     // upon click carry out anonymus function
-    item.addEventListener("click", function (){
+    item.addEventListener("click", function () {
         // store inner text of user choice and set to lowercase
         difficulty = item.innerText.toLowerCase();
         console.log(`User selected ${difficulty} difficulty`);
@@ -460,24 +465,24 @@ function getDifficulty(difficulty) {
  * Displays hint modal.
  */
 function showHint() {
-       newDiv.classList.remove("hidden");
-        newDiv.classList.add("col-12","pt-4");
-        newDiv.style.fontFamily = "Monteserrat, sans-serif";
-        newDiv.classList.add("pulse");
-        newDiv.style.color = "#98C379"
-        newDiv.innerText = "CLICK HERE FOR A HINT";
-        let div = document.getElementById("tries-container");
-        div.appendChild(newDiv);
-        newDiv.addEventListener("click", function(){
-            let key = wordBank[wordBankIndex]
-            if(difficulty === "easy"){
-                hintModalText.innerText = `${wordBankEasy[key]}`;
-            }else if(difficulty === "medium"){
-                hintModalText.innerText = `${wordBankMedium[key]}`;
-            }else{
-                hintModalText.innerText = `${wordBankHard[key]}`;
-            } 
-            hints.show();
-            newDiv.classList.add("hidden");
-        })
+    newDiv.classList.remove("hidden");
+    newDiv.classList.add("col-12", "pt-4");
+    newDiv.style.fontFamily = "Monteserrat, sans-serif";
+    newDiv.classList.add("pulse");
+    newDiv.style.color = "#98C379"
+    newDiv.innerText = "CLICK HERE FOR A HINT";
+    let div = document.getElementById("tries-container");
+    div.appendChild(newDiv);
+    newDiv.addEventListener("click", function () {
+        let key = wordBank[wordBankIndex]
+        if (difficulty === "easy") {
+            hintModalText.innerText = `${wordBankEasy[key]}`;
+        } else if (difficulty === "medium") {
+            hintModalText.innerText = `${wordBankMedium[key]}`;
+        } else {
+            hintModalText.innerText = `${wordBankHard[key]}`;
+        }
+        hints.show();
+        newDiv.classList.add("hidden");
+    })
 }
