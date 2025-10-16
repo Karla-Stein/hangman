@@ -9,7 +9,7 @@ document.addEventListener ("DOMContentLoaded", () => {
 const currentPath = window. location.pathname;
 //4) If it's *not* one of our known pages, redirect to the main page.
 const isKnown = VALID_PATHS. includes (currentPath);
-if (lisKnown) {
+if (!isKnown) {
 // 5) Do the redirect.
 // replace() avoids adding a useless "bad page" entry to browser history.
 window. location.replace("/index.html");
