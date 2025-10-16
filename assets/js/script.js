@@ -38,6 +38,10 @@ document.querySelectorAll(".navbar-collapse .nav-link:not(.dropdown-toggle), .na
   });
 });
 
+     // set localStorage "highscore" to 0 if none exists on game-load. 
+    if (!localStorage.getItem("highscore")) {
+      localStorage.setItem("highscore", "0");
+    } 
     let currentHighscore = localStorage.getItem("highscore");
     document.getElementById("highscore").innerText = currentHighscore;
 
