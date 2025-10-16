@@ -422,9 +422,11 @@ function resetHighscore(){
     console.log("Reset highscore:", userHighscore);
 }
 
+// // Attach click event to each dropdown item (Easy, Medium, Hard)
 document.querySelectorAll(".dropdown-item").forEach(item => {
-    // for each dropdown item attach eventListener
+    // upon click carry out anonymus function
     item.addEventListener("click", function (){
+        // store inner text of user choice and set to lowercase
         difficulty = item.innerText.toLowerCase();
         console.log(`User selected ${difficulty} difficulty`);
         getDifficulty(difficulty);
@@ -450,7 +452,13 @@ function getDifficulty(difficulty) {
             break;
     }
 }
-
+/**
+ * Styles and displays hint div that was previuosly created.
+ * Attach click event listener to create a key of the current random word
+ * to retrive the object value
+ * of the relevant wordbank depending on the user choice.
+ * Displays hint modal.
+ */
 function showHint() {
        newDiv.classList.remove("hidden");
         newDiv.classList.add("col-12","pt-4");
