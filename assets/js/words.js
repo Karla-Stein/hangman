@@ -314,4 +314,3 @@ const wordBankHard = {
   "fantasy": "Where dragons and dreams live.",
   "horizon": "It moves when you do.",
 };
-
