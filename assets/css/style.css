@@ -1,136 +1,150 @@
 /* Google fonts import */
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 /* CSS variables */
 :root {
-  --primary-font: "Indie Flower", cursive;
-  --secondary-font: "Montserrat", sans-serif;
+    --primary-font: "Indie Flower", cursive;
+    --secondary-font: "Montserrat", sans-serif;
 }
+
 /* Global styles */
-body{
+body {
     font-family: var(--primary-font);
     color: white;
     background-color: black;
 }
 
-.invisible{
+.invisible {
     display: none;
 }
 
 /* Navbar */
-#navbar{
+#navbar {
     font-family: var(--secondary-font);
 }
 
-.navbar-collapse{
+.navbar-collapse {
     background-color: black;
 }
 
 /* Hangman-visual */
-#hangman-visual img{
+#hangman-visual img {
     border-radius: 20px;
     height: 300px;
     width: 300px;
 }
 
-.img-fluid{
+.img-fluid {
     max-width: auto;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
 
 /* Title section*/
-#game-title{
+#game-title {
     margin: 2rem 0;
 }
 
-#game-title h1{
-  font-weight: bold;
+#game-title h1 {
+    font-weight: bold;
 }
 
-#display-highscore{
+#display-highscore {
     font-family: var(--secondary-font);
 }
 
 /* Placeholder section */
-#placeholder{
+#placeholder {
     font-family: var(--secondary-font);
 }
-#score{
+
+#score {
     font-family: var(--secondary-font);
 }
 
 /* Buttons section*/
 
-.btn{
+.btn {
     height: 3rem;
     width: 3rem;
     margin: 5px;
     font-family: var(--secondary-font);
 }
 
-.disabled{
+.disabled {
     pointer-events: none;
 }
 
 /* Modal */
-.modal{
+.modal {
     font-family: var(--secondary-font);
 }
 
 /* Hint animation */
 @keyframes pulse {
-  0% {
-    transform: scale(1);     /* start at normal size */
-    opacity: 1;              /* fully visible */
-  }
-  50% {
-    transform: scale(1.05);  /* slightly grow */
-    opacity: 0.75;              /* fade slightly*/
-    
-  }
-  100% {
-    transform: scale(1);     /* go back to normal size */
-    opacity: 1;
-  }
+    0% {
+        transform: scale(1);
+        /* start at normal size */
+        opacity: 1;
+        /* fully visible */
+    }
+
+    50% {
+        transform: scale(1.05);
+        /* slightly grow */
+        opacity: 0.75;
+        /* fade slightly*/
+
+    }
+
+    100% {
+        transform: scale(1);
+        /* go back to normal size */
+        opacity: 1;
+    }
 }
 
-.pulse{
+.pulse {
     animation: pulse 1.2s infinite;
 }
+
 /* Media queries */
-@media screen and (max-width: 768px){
-    .btn{
-    padding: 2px;
-    height: 40px;
-    width: 40px;
-    margin: 4px;  
+@media screen and (max-width: 768px) {
+    .btn {
+        padding: 2px;
+        height: 40px;
+        width: 40px;
+        margin: 4px;
+    }
 }
+
+@media screen and (max-width: 503px) {
+    .btn {
+        padding: 1px;
+        height: 30px;
+        width: 30px;
+        margin: 3px;
+        border-radius: 20%;
+    }
 }
-@media screen and (max-width: 503px){
-    .btn{
-    padding: 1px;
-    height: 30px;
-    width: 30px;
-    margin: 3px;
-    border-radius: 20%;
+
+@media screen and (max-width: 425px) {
+    .btn {
+        font-size: smaller;
+        padding: 1px;
+        height: 25px;
+        width: 25px;
+        margin: 2px;
+        border-radius: 20%;
+    }
 }
-}
-@media screen and (max-width: 425px){
-    .btn{
-    font-size: smaller;
-    padding: 1px;
-    height: 25px;
-    width: 25px;
-    margin: 2px;
-    border-radius: 20%;
-}
-}
-@media screen and (min-width: 320px){
-    #hangman-visual img{
-    border-radius: 20px;
-    height: 250px;
-    width: 250px;
-}
+
+@media screen and (min-width: 320px) {
+    #hangman-visual img {
+        border-radius: 20px;
+        height: 250px;
+        width: 250px;
+    }
 }
