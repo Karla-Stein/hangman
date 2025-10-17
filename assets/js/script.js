@@ -195,6 +195,7 @@ function wrongGuess(randomWordArray) {
      */
     function gameLost() {
         gameOver = true;
+        newDiv.classList.add("hidden");
         document.getElementById("placeholder").innerText = randomWordArray.join("");
 
         disableButtons();
