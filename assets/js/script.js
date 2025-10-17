@@ -153,7 +153,7 @@ document.addEventListener("keydown", (e) => {
 function handleGuess(e) {
     let btn = e.target;
     let buttonLetter = btn.innerText;
-    btn.classList.remove("disabled");
+    if (btn.classList.contains("disabled")) return;
 
     if (!randomWordArray.includes(buttonLetter)) {
         btn.style.background = "grey";
@@ -167,6 +167,7 @@ function handleGuess(e) {
                 document.getElementById("placeholder").innerText = placeholderArray.join("");
             }
         }
+        btn.classList.add("disabled");
         gameWon(placeholderArray, randomWordArray);
     }
 }
