@@ -55,6 +55,15 @@ body {
     font-family: var(--secondary-font);
 }
 
+/* 404 page */
+#wrong-url-message{
+    font-family: var(--secondary-font);
+}
+
+#hangman-span{
+    font-family: var(--primary-font);
+}
+
 /* Placeholder section */
 #placeholder {
     font-family: var(--secondary-font);
