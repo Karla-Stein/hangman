@@ -126,7 +126,10 @@ For this project, I intentionally chose a **black-and-white colour scheme** to k
 The minimalist aesthetic supports clarity and usability, allowing players to focus entirely on the core objective: guessing the word.  
 This approach also enhances accessibility by ensuring high contrast between text, buttons and background elements.
 
-No accent colours or gradients were used. The simplicity of the design aligns with the classic and nostalgic feel of the Hangman game.
+A subtle **soft green accent(#98C379)** was introduced exclusively for the **hint feature**. This colour symbolises **guidance and reassurance**, helping draw attention in a calm and supportive way without breaking the minimalistic aesthetics. 
+
+The overall desing pays homage to the **classic and nostalgig feel** of the traditional hangman game while embracing modern simplicity.
+
 
 ### Typography
 
