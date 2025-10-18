@@ -1,5 +1,5 @@
 /* jshint esversion: 11*/
-/* global bootstrap, confetti, wordBankEasy, wordBankMedium, wordBankHard */
+/* global bootstrap, confetti, wordBankEasy, wordBankMedium, wordBankHard, module*/
 
 let userTry = 6;
 let currentScore = 0;
