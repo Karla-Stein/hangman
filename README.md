@@ -128,7 +128,7 @@ This approach also enhances accessibility by ensuring high contrast between text
 
 A subtle **soft green accent(#98C379)** was introduced exclusively for the **hint feature**. This colour symbolises **guidance and reassurance**, helping draw attention in a calm and supportive way without breaking the minimalistic aesthetics. 
 
-The overall desing pays homage to the **classic and nostalgig feel** of the traditional hangman game while embracing modern simplicity.
+The overall desing pays homage to the **classic and nostalgic feel** of the traditional hangman game while embracing modern simplicity.
 
 
 ### Typography

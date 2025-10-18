@@ -485,3 +485,13 @@ function showHint() {
         newDiv.classList.add("hidden");
     })
 }
+
+if (typeof module !== "undefined") module.exports = {
+    getDifficulty,
+    triesLeft,
+    addCurrentScore,
+    addHighScore,
+    resetButtons,
+    disableButtons,
+    hideImages
+};
