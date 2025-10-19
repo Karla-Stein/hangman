@@ -139,3 +139,23 @@ Two fonts from [Google Fonts](https://fonts.google.com/) were used to enhance th
 - [**Montserrat**](https://fonts.google.com/specimen/Montserrat) was used as the secondary font for clean, easy-to-read supporting text, such as navigation links, game rules, highscore and buttons.
 
 The combination of these fonts adds a balance between personality and clarity, aligning with the game's overall aesthetic of simplicity and fun.
+
+
+## User Stories
+
+
+| Target | Expectation | Outcome |
+| --- | --- | --- |
+| As a player | I want to see a visual representation of the hangman | So that I can track my progress and understand how many incorrect guesses I have left. |
+| As a player |I want to see underscores for each letter in the word | So that I know how many letters I need to guess and see when I get them right. |
+| As a player |I want the game to tell me whether my guess is correct or not | So that I can see my progress and adjust my next guess. |
+| As a player | I want the game to respond when I guess a wrong letter | So that I understand my mistake and feel the tension of limited chances. |
+| As a player | I want to be able to reset the game at any time | So that I can play a new round without refreshing the page. |
+| As a player | I want to see my score increase each time I guess a word correctly | So that I feel rewarded and motivated to keep playing. |
+| As a player | I want to click on-screen letter buttons to guess the word | So that I can interact with the game without needing a keyboard. |
+| As a player | I want a fixed navbar with clearly visible Start and Reset buttons and a place to find the game rules | So that I can easily control the game from one central place. |
+| As a player | I want to select a difficulty level before starting the game | So that I can tailor the challenge to match my skill and mood.|
+| As a player | I want the game to track my highest score | So that I can try to beat it and feel rewarded when I do. |
+| As a player | I want to receive a hint | So that I can get a final chance to guess the word correctly. |
+| As a player | I want to be able to use my physical keyboard to guess the letters | So that I can interact with the game more intuitively. |
+| As a website visitor | I want to be automatically redirected to the homepage when I enetr a wrong or broken URL | So that I don't get stuck on an error page or have to use the browsers back button.
