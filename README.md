@@ -192,5 +192,25 @@ The combination of these fonts adds a balance between personality and clarity, a
 - **Random word API integration**: Replace the static word banks with an external API to fetch fresh, unpredictable words for each game, keeping novelty of the game and improving variety.
 
 
+## Tools & Technologies
 
-
+| Tool / Tech | Use |
+| --- | --- |
+| [![badge](https://img.shields.io/badge/Markdown_Builder-grey?logo=markdown&logoColor=000000)](https://markdown.2bn.dev) | Generate README and TESTING templates. |
+| [![badge](https://img.shields.io/badge/Git-grey?logo=git&logoColor=F05032)](https://git-scm.com) | Version control. (`git add`, `git commit`, `git push`) |
+| [![badge](https://img.shields.io/badge/GitHub-grey?logo=github&logoColor=181717)](https://github.com) | Secure online code storage. |
+| [![badge](https://img.shields.io/badge/VSCode-grey?logo=htmx&logoColor=007ACC)](https://code.visualstudio.com) | Local IDE for development. |
+| [![badge](https://img.shields.io/badge/HTML-grey?logo=html5&logoColor=E34F26)](https://en.wikipedia.org/wiki/HTML) | Main site content and layout. |
+| [![badge](https://img.shields.io/badge/CSS-grey?logo=css&logoColor=1572B6)](https://en.wikipedia.org/wiki/CSS) | Design and layout. |
+| [![badge](https://img.shields.io/badge/JavaScript-grey?logo=javascript&logoColor=F7DF1E)](https://www.javascript.com) | User interaction on the site. |
+| [![badge](https://img.shields.io/badge/GitHub_Pages-grey?logo=githubpages&logoColor=222222)](https://pages.github.com) | Hosting the deployed front-end site. |
+| [![badge](https://img.shields.io/badge/Bootstrap-grey?logo=bootstrap&logoColor=7952B3)](https://getbootstrap.com) | Front-end CSS framework for modern responsiveness and pre-built components. |
+| [![badge](https://img.shields.io/badge/Jest-grey?logo=jest&logoColor=c21325)](https://jestjs.io) | Automated JavaScript testing. |
+| [![badge](https://img.shields.io/badge/Balsamiq-grey?logo=barmenia&logoColor=CE0908)](https://balsamiq.com/wireframes) | Creating wireframes. |
+| [![badge](https://img.shields.io/badge/ChatGPT-grey?logo=openai&logoColor=75A99C)](https://chat.openai.com) | Help debug, troubleshoot, and explain things. |
+| [![badge](https://img.shields.io/badge/W3Schools-grey?logo=w3schools&logoColor=04AA6D)](https://www.w3schools.com) | Tutorials/Reference Guide |
+| [![badge](https://img.shields.io/badge/StackOverflow-grey?logo=stackoverflow&logoColor=F58025)](https://stackoverflow.com) | Troubleshooting and Debugging |
+| [![Canva](https://img.shields.io/badge/Design%20Tool-Canva-00C4CC)](https://www.canva.com/en_gb/)| Used to edit hangman images |
+| [![Squoosh](https://img.shields.io/badge/Compressed%20with-Squoosh-ff69b4)](https://squoosh.app/) | Resize images |
+| [![Celebration Animation](https://img.shields.io/badge/Animation-canvas‑confetti-ff69b4)](https://www.jsdelivr.com/package/npm/canvas-confetti) | Confetti animation |
+| [![Icon designed with Flaticon](https://img.shields.io/badge/Icons%20designed%20with-Flaticon-FFB000)](https://www.flaticon.com/free-icons/hangman) | Favicon |
