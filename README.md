@@ -214,3 +214,15 @@ The combination of these fonts adds a balance between personality and clarity, a
 | [![Squoosh](https://img.shields.io/badge/Compressed%20with-Squoosh-ff69b4)](https://squoosh.app/) | Resize images |
 | [![Celebration Animation](https://img.shields.io/badge/Animation-canvas‑confetti-ff69b4)](https://www.jsdelivr.com/package/npm/canvas-confetti) | Confetti animation |
 | [![Icon designed with Flaticon](https://img.shields.io/badge/Icons%20designed%20with-Flaticon-FFB000)](https://www.flaticon.com/free-icons/hangman) | Favicon |
+
+
+## Agile Development Process
+
+### GitHub Projects
+
+
+[GitHub Projects](https://www.github.com/Karla-Stein/hangman/projects) 
+**GitHub Projects** was used to manage the project with an Agile, user-focused approach. A visual **Kanban board** helped break down tasks, track progress and maintain momentum throughout development.  
+This workflow ensured that features stayed aligned with real user needs, reduced the risk of scope creep, and supported the delivery of a focused MVP without unnecessary complexity.
+
+![screenshot](documentation/github-projects/project-board.jpeg)
