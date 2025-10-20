@@ -186,5 +186,11 @@ The combination of these fonts adds a balance between personality and clarity, a
 
 
 
+### Future Features
+
+- **Dark / Light mode toggle**: Give users the option to switch between dark and light themes for better accessibility and personal preference.
+- **Random word API integration**: Replace the static word banks with an external API to fetch fresh, unpredictable words for each game, keeping novelty of the game and improving variety.
+
+
 
 
