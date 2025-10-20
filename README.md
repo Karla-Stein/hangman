@@ -165,22 +165,24 @@ The combination of these fonts adds a balance between personality and clarity, a
 
 | Feature | Notes | Screenshot |
 | --- | --- | --- |
-| Responsive Navbar | A fixed-top navigation bar gives users quick access to all essential controls: **Start Game**, **Reset Game**, **Reset Highscore** and **Game Rules**. Fully responsive across devices.| ![screenshot](documentation/features/operators.png) |
-| Game Rules Modal | A modal link within the navbar clearly explains how to play.| ![screenshot](documentation/features/equation.png) |
-| Start Button | Starts the game including the score, selected word, and visuals. To be used for starting or starting over from scratch.| ![screenshot](documentation/features/submit-answer.png) |
-| Reset Button | Resets the current round (word and tries) but preserves the current score. | ![screenshot](documentation/features/scores.png) |
-| Reset the game  | A reset button is always visible in the navbar, allowing players to restart the game at any time without reloading the page. | ![screenshot](documentation/features/alerts.png) |
-| Difficulty Selection | Players can select between **Easy**, **Medium**, or **Hard** levels before starting or in between games. Each level uses a unique word bank to match the difficulty. | ![screenshot](documentation/features/404.png) |
-| Highscore Tracker | Tracks and saves the user’s best performance using localStorage. Displayed in the interface to encourage replay and improvement. Triggers Confetti animation once new highscore is hit.| ![screenshot]() |
-| Current score counter | Shows how many words have been successfully guessed in the current session. Resets only with the Start button or when game over. | ![screenshot]() |
-| Hangman visuals | A hangman image updates step-by-step with each incorrect guess. Once fully drawn, the game ends. | ![screenshot]() |
-| Tries Left Display | A dynamic counter shows the remaining number of incorrect guesses, building suspense and keeping users aware of their progress. | ![screenshot]() |
-| Placeholder Word Display | Underscores represent each letter in the hidden word. Correct guesses dynamically reveal letters, offering immediate feedback. | ![screenshot]() |
-| Virtual Keyboard| Players interact via an on-screen A–Z keyboard, which disables letters after use. Physical keyboard input is also supported for accessibility.| ![screenshot]() |
-| Hint Prompt & Modal | When only one try remains, a green hint prompt appears. Clicking it opens a modal displaying a hint for the current word. This gives the player a final lifeline. | ![screenshot]()|
-| Victory Modal | A modal pops up when the user correctly guesses the word, showing a congratulatory message. | ![screenshot]() |
-| Game Over Modal | If all tries are used without guessing the word, a “Game Over” modal appears, revealing the correct word. User must now **Start Game** to play again. | ![screenshot]() |
-| 404 Redirect Page | If a user visits a broken or non-existent link, a custom 404 page is shown with a hangman image, error message and a countdown redirect back to the homepage. This ensures no dead ends in the user experience. | ![screenshot]() |
+| Responsive Navbar | A fixed-top navigation bar gives users quick access to all essential controls: **Start Game**, **Reset Game**, **Reset Highscore** and **Game Rules**. Fully responsive across devices.| ![screenshot](documentation/features/navbar.jpeg) |
+| Game Rules Modal | A modal link within the navbar clearly explains how to play.| ![screenshot](documentation/features/game-rule-modal.jpeg) |
+| Start Button | Starts the game including the score, selected word, and visuals. To be used for starting or starting over from scratch.| ![screenshot](documentation/features/start-button.jpeg) |
+| Reset Button | Resets the current round (word and tries) but preserves the current score. | ![screenshot](documentation/features/reset-button.jpeg) |
+| Difficulty Selection | Players can select between **Easy**, **Medium**, or **Hard** levels before starting or in between games. Each level uses a unique word bank to match the difficulty. | ![screenshot](documentation/features/difficulty-selection.jpeg) |
+| Highscore Tracker | Tracks and saves the user’s best performance using localStorage. Displayed in the interface to encourage replay and improvement. Triggers Confetti animation once new highscore is hit.| ![screenshot](documentation/features/highscore-tracker.jpeg) |
+| Highscore storage | Highscore is stored in local storage to ensure the user can attempt to beat their previous best score. | ![screenshot](documentation/features/highscore-storage.jpeg)
+| Current score counter | Shows how many words have been successfully guessed in the current session. Resets only with the Start button or when game over. | ![screenshot](documentation/features/current-score-counter.jpeg) |
+| Highscore modal | A new highscore triggers a modal to congratulate to the new highscore and provides rewarding feedback alongside confetti animation | ![screenshot](documentation/features/highscore-modal.jpeg)
+| Hangman visuals | A hangman image updates step-by-step with each incorrect guess. Once fully drawn, the game ends. | ![screenshot](documentation/features/hangman-visuals.jpeg) |
+| Tries Left Display | A dynamic counter shows the remaining number of incorrect guesses, building suspense and keeping users aware of their progress. | ![screenshot](documentation/features/tries-left-display.jpeg) |
+| Placeholder Word Display | Underscores represent each letter in the hidden word. Correct guesses dynamically reveal letters, offering immediate feedback. | ![screenshot](documentation/features/placeholder-word-display.jpeg) |
+| Virtual Keyboard| Players interact via an on-screen A–Z keyboard, which disables letters after use. Physical keyboard input is also supported for accessibility.| ![screenshot](documentation/features/virtual-keyboard.jpeg) |
+| Hint Prompt | When only one try remains, a green hint prompt appears. Clicking it opens a modal. | ![screenshot](documentation/features/hint-prompt.jpeg)|
+| Hint modal | Modal displaying a hint for the current word. This gives the player a final lifeline. | ![screenshot](documentation/features/hint-modal.jpeg)
+| Victory Modal | A modal pops up when the user correctly guesses the word, showing a congratulatory message. | ![screenshot](documentation/features/victory-modal.jpeg) |
+| Game Over Modal | If all tries are used without guessing the word, a “Game Over” modal appears, revealing the correct word. User must now **Start Game** to play again. | ![screenshot](documentation/features/game-over-modal.jpeg) |
+| 404 Redirect Page | If a user visits a broken or non-existent link, a custom 404 page is shown with a hangman image, error message and a countdown redirect back to the homepage. This ensures no dead ends in the user experience. | ![screenshot](documentation/features/404-redirect-page.jpeg) |
 
 
 
