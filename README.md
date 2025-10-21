@@ -296,3 +296,37 @@ By forking the GitHub Repository, you make a copy of the original repository on 
 ### Local vs Deployment
 
 There are no remaining major differences between the local version when compared to the deployed version online.
+
+## Credits
+
+### Content & Design Inspiration
+
+I wanted to create a project that would allow me to focus primarily on **JavaScript functionality** rather than heavy HTML or CSS work.
+This Hangman game was chosen because it offered the perfect opportunity to apply logic-based thinking, DOM manipulation, conditionals, loops and state management.
+While I kept the layout minimal and intentionally simple, the focus was on building a fully interactive experience where functionality came first.
+
+### README & Documentation
+
+- The overall structure, formatting and flow of this README were guided by my mentor, Tim Nelson, whose input helped shape a clear and professional documentation style throughout.
+
+### Code References & Tutorials
+
+- **Code Institute** - JavaScript structure and DOM handling strategies were informed by course material and the love-maths walkthrough project. Course materials were especially helpful in installing and configuring Jest for unit testing.
+- **MDN Web Docs** - Used as the primary reference for JavaScript, HTML and accessibility guidelines.
+- **W3Schools** - Occasionally referenced for syntax examples.
+- **Stack Overflow** - Used sparingly to troubleshoot specific issues, such as DOM manipulation quirks or event listener bugs.
+- **ChatGPT** - Used to quickly resolve development issues and clarify technical concepts.
+- **Mentor Tim Nelson** - Helped with structuring and writing unit tests using Jest to validate DOM interactions and game behavior.
+
+### Tools & Resources
+
+- [**Bootstrap 5**](https://getbootstrap.com) – Used for responsive design, modals and navigation styling.
+- [**Canvas Confetti**](https://www.kirilv.com/canvas-confetti/) – Used for celebrating highscores in a fun and visual way.
+- [**Flaticon**](https://www.flaticon.com) – Source of the favicon and visual assets for the game.
+- [**Google Fonts**](https://fonts.google.com) – Used to import custom fonts for headings and body text.
+- [**Canva**](https://www.canva.com) – Used to edit the hangman visuals.
+- [**GitHub Projects**](https://github.com/Karla-Stein/hangman/projects) – Used for Agile-style development with user stories tracked via Kanban board.
+- [**Jest**](https://jestjs.io) – JavaScript testing framework used for unit testing logic functions.
+- [**Balsamiq**](https://balsamiq.com) - Early-stage wireframe creation. 
+- [**Squoosh**](https://squoosh.app/) - Used for resizing hangman Images.
+- [**Canvas Confetti**](https://www.jsdelivr.com/package/npm/canvas-confetti) - Library script source for confetti animation. 
