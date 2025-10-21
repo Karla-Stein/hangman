@@ -226,3 +226,18 @@ The combination of these fonts adds a balance between personality and clarity, a
 This workflow ensured that features stayed aligned with real user needs, reduced the risk of scope creep, and supported the delivery of a focused MVP without unnecessary complexity.
 
 ![screenshot](documentation/github-projects/project-board.jpeg)
+
+### MoSCoW Prioritization
+
+To stay focused and prevent overwhelm, I used the **MoSCoW method** to organize and prioritize tasks within my GitHub Project board.  
+Larger development goals (EPICs) were broken down into smaller, actionable **user stories**, then grouped by priority to guide the workflow.
+
+This approach made it easy to identify what truly mattered for the initial build and what could be refined later.
+
+**Prioritization breakdown:**
+- **Must Have** – Core, non‑negotiable features essential for the game to function.  
+- **Should Have** – Features that add strong value but aren’t critical for a working MVP.  
+- **Could Have** – Nice‑to‑have enhancements with minimal impact if postponed.  
+- **Won’t Have (for now)** – Features planned for future updates once my technical skills advance.
+
+Using this method kept the project scope realistic, ensuring I built a fully functional and polished MVP without losing focus on the essentials.
