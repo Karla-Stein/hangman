@@ -321,6 +321,7 @@ While I kept the layout minimal and intentionally simple, the focus was on build
 ### Tools & Resources
 
 - [**Bootstrap 5**](https://getbootstrap.com) – Used for responsive design, modals and navigation styling.
+- [**Canvas Confetti**](https://www.jsdelivr.com/package/npm/canvas-confetti) - Library script source for confetti animation. 
 - [**Canvas Confetti**](https://www.kirilv.com/canvas-confetti/) – Used for celebrating highscores in a fun and visual way.
 - [**Flaticon**](https://www.flaticon.com) – Source of the favicon and visual assets for the game.
 - [**Google Fonts**](https://fonts.google.com) – Used to import custom fonts for headings and body text.
@@ -329,4 +330,23 @@ While I kept the layout minimal and intentionally simple, the focus was on build
 - [**Jest**](https://jestjs.io) – JavaScript testing framework used for unit testing logic functions.
 - [**Balsamiq**](https://balsamiq.com) - Early-stage wireframe creation. 
 - [**Squoosh**](https://squoosh.app/) - Used for resizing hangman Images.
-- [**Canvas Confetti**](https://www.jsdelivr.com/package/npm/canvas-confetti) - Library script source for confetti animation. 
+
+
+### Media
+
+- Images
+    - [Flaticon](https://www.flaticon.com/free-icons/hangman)
+
+- Image edits
+    - [Canva](https://www.canva.com/design/DAGzhydVR9g/Wjq4jgokPWmgcFByht3Jpg/view?utm_content=DAGzhydVR9g&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink&mode=preview)
+
+- Image Compression
+    - [Squoosh](https://squoosh.app/) 
+
+### Acknowledgements
+
+I would like to first and foremost thank my Code Institute mentor, [Tim Nelson](https://github.com/TravelTimN), who has been a tremendous source of knowledge and support throughout this course so far.  
+His ongoing guidance, patience and clear explanations have been invaluable.
+
+I would also like to thank [Code Institute](https://codeinstitute.net) for providing structured, comprehensive and well-paced learning materials that built the foundation for this project.  
+
