@@ -16,3 +16,8 @@ I have used the recommended [HTML W3C Validator](https://validator.w3.org) to va
 ### CSS
 
 I have used the recommended [CSS Jigsaw Validator](https://jigsaw.w3.org/css-validator) to validate all of my CSS files.
+
+| Directory | File | URL | Screenshot | Notes
+| --- | --- | --- | --- | --- |
+| assets | [style.css](https://github.com/Karla-Stein/hangman/blob/main/assets/css/style.css) | [CSS Validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fkarla-stein.github.io%2Fhangman%2Fassets%2Fcss%2Fstyle.css&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en) | ![screenshot](documentation/testing/validation/style-css.jpeg) | During CSS validation, minor warnings appeared related to the Google Fonts @import statement. These warnings are common when using external font libraries, do not impact the functionality or rendering of the site and are out of my control.
+
