@@ -1,4 +1,4 @@
-// //* jshint esversion: 11*/
+/* jshint esversion: 11 */
 
 // visualise the automatic redirect to the user
 document.addEventListener("DOMContentLoaded", () => {

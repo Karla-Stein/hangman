@@ -37,7 +37,7 @@ hintModalEl.addEventListener("hide.bs.modal", () => {
         document.activeElement.blur();
     }
 });
-let hintModalText = document.getElementById("hint-modal-body")
+let hintModalText = document.getElementById("hint-modal-body");
 
 let allButtons = [];
 let randomWordArray = [];
@@ -468,12 +468,12 @@ function showHint() {
     newDiv.classList.add("col-12", "pt-4");
     newDiv.style.fontFamily = "Monteserrat, sans-serif";
     newDiv.classList.add("pulse");
-    newDiv.style.color = "#98C379"
+    newDiv.style.color = "#98C379";
     newDiv.innerText = "CLICK HERE FOR A HINT";
     let div = document.getElementById("tries-container");
     div.appendChild(newDiv);
     newDiv.addEventListener("click", function () {
-        let key = wordBank[wordBankIndex]
+        let key = wordBank[wordBankIndex];
         if (difficulty === "easy") {
             hintModalText.innerText = `${wordBankEasy[key]}`;
         } else if (difficulty === "medium") {
@@ -483,7 +483,7 @@ function showHint() {
         }
         hints.show();
         newDiv.classList.add("hidden");
-    })
+    });
 }
 
 if (typeof module !== "undefined") module.exports = {
