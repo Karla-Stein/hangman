@@ -31,5 +31,5 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | assets | [redirect404.js](https://github.com/Karla-Stein/hangman/blob/main/assets/js/redirect404.js) | ![screenshot](documentation/testing/validation/redirect404-js.jpeg) | 
 | assets | [script.js](https://github.com/Karla-Stein/hangman/blob/main/assets/js/script.js) | ![screenshot](documentation/testing/validation/script-js.jpeg) | 
 | assets | [game.test.js](https://github.com/Karla-Stein/hangman/blob/main/assets/js/tests/game.test.js) | ![screenshot](documentation/testing/validation/game-test-js.jpeg) | 
-
+| assets | [words.js](https://github.com/Karla-Stein/hangman/blob/main/assets/js/words.js) | ![screenshot](documentation/testing/validation/words.js.jpeg) | 
 
