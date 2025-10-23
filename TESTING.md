@@ -54,3 +54,11 @@ I've tested my deployed project on multiple browsers to check for compatibility 
 | 404 | ![screenshot](documentation/browsers/chrome-404.jpeg) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/safari-404.png) | Works as expected |
 
 
+## Lighthouse Audit
+
+I've tested my deployed project using the Lighthouse Audit tool to check for any major issues. Some warnings are outside of my control, and mobile results tend to be lower than desktop.
+
+| Page | Mobile | Desktop |
+| --- | --- | --- |
+| Home | ![screenshot](documentation/lighthouse/mobile-home.jpeg) | ![screenshot](documentation/lighthouse/desktop-home.jpeg) |
+| 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
