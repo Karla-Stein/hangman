@@ -44,3 +44,13 @@ I've tested my deployed project to check for responsiveness issues.
 | 404 | ![screenshot](documentation/responsivness/404-mobile.png) | ![screenshot](documentation/responsivness/404-tablet.jpeg) | ![screenshot](documentation/responsivness/404-desktop.jpeg) | Works as expected |
 
 
+## Browser Compatibility
+
+I've tested my deployed project on multiple browsers to check for compatibility issues.
+
+| Page | Chrome | Firefox | Safari | Notes |
+| --- | --- | --- | --- | --- |
+| Home | ![screenshot](documentation/browsers/chrome-home.jpeg) | ![screenshot](documentation/browsers/firefox-home.png) | ![screenshot](documentation/browsers/safari-home.png) | Works as expected |
+| 404 | ![screenshot](documentation/browsers/chrome-404.jpeg) | ![screenshot](documentation/browsers/firefox-404.png) | ![screenshot](documentation/browsers/safari-404.png) | Works as expected |
+
+
