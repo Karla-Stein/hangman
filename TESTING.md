@@ -61,4 +61,4 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | Page | Mobile | Desktop |
 | --- | --- | --- |
 | Home | ![screenshot](documentation/lighthouse/mobile-home.jpeg) | ![screenshot](documentation/lighthouse/desktop-home.jpeg) |
-| 404 | ![screenshot](documentation/lighthouse/mobile-404.png) | ![screenshot](documentation/lighthouse/desktop-404.png) |
+| 404 | ![screenshot](documentation/lighthouse/mobile-404.jpeg) | ![screenshot](documentation/lighthouse/desktop-404.jpeg) |
