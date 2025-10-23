@@ -33,3 +33,14 @@ I have used the recommended [JShint Validator](https://jshint.com) to validate a
 | assets | [game.test.js](https://github.com/Karla-Stein/hangman/blob/main/assets/js/tests/game.test.js) | ![screenshot](documentation/testing/validation/game-test-js.jpeg) | 
 | assets | [words.js](https://github.com/Karla-Stein/hangman/blob/main/assets/js/words.js) | ![screenshot](documentation/testing/validation/words.js.jpeg) | 
 
+
+## Responsiveness
+
+I've tested my deployed project to check for responsiveness issues.
+
+| Page | Mobile | Tablet | Desktop | Notes |
+| --- | --- | --- | --- | --- |
+| Home | ![screenshot](documentation/responsivness/home-mobile.png) | ![screenshot](documentation/responsivness/home-tablet.jpeg) | ![screenshot](documentation/responsivness/home-desktop.jpeg) | Works as expected |
+| 404 | ![screenshot](documentation/responsivness/404-mobile.png) | ![screenshot](documentation/responsivness/404-tablet.jpeg) | ![screenshot](documentation/responsivness/404-desktop.jpeg) | Works as expected |
+
+
