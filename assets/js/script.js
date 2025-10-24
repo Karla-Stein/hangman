@@ -43,6 +43,7 @@ let allButtons = [];
 let randomWordArray = [];
 let placeholderArray = [];
 let gameOver = false;
+let gameOn = true;
 let wordBankIndex = 0;
 let difficulty = "medium";
 let newDiv = document.createElement("div");
@@ -252,7 +253,12 @@ function gameWon(placeholderArray, randomWordArray) {
                 `;
         }
         modalEndGame.show();
-        resetGame();
+        gameOn = false;
+        if (!gameOn) {
+            disableButtons()
+        }
+        let modal = document.getElementById("end-game");
+        modal.addEventListener("click", resetGame);
     }
 }
 
