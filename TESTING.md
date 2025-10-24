@@ -62,3 +62,17 @@ I've tested my deployed project using the Lighthouse Audit tool to check for any
 | --- | --- | --- |
 | Home | ![screenshot](documentation/lighthouse/mobile-home.jpeg) | ![screenshot](documentation/lighthouse/desktop-home.jpeg) |
 | 404 | ![screenshot](documentation/lighthouse/mobile-404.jpeg) | ![screenshot](documentation/lighthouse/desktop-404.jpeg) |
+
+
+## Defensive Programming
+
+Defensive programming was manually tested with the below user acceptance testing:
+
+| Page/Feature | Expectation | Test | Result | Fix Implemted | Screenshot |
+| --- | --- | --- | --- | --- | --- |
+| Start Game button | Expected to start a new game with the initial start settings | Clicked “Start Game” repeatedly from different game stages and difficulty levels.| Game started successfully with reset tries to 6, current score to 0, hangman image to initial state, all buttons enabled and fresh word every time.| No fix needed | ![screenshot](documentation/defensive/start-button.jpeg) |
+| Reset Game Button | Expected to refresh the game with a new word and set back tries to 6, while keeping the current score. | Clicked “Reset Game” mid-round. | New word generated, score persisted, tries reset to 6 and hangman images set back to initial state. | No fix needed |  ![screenshot](documentation/defensive/reset-button.jpeg) |
+| Reset Highscore| Expected to clear stored highscore in localStorage.| Clicked “Reset Highscore” and checked localStorage. | Highscore value reset to 0 and updated visually.| No fix needed| ![screenshot](documentation/defensive/reset-highscore.jpeg) |
+| On-screen Keyboard | Expected to disable a letter once selected and not allow multiple inputs.| Clicked same letter multiple times | Button was disabled after first use, preventing duplicate input.| No fix needed |  ![screenshot](documentation/defensive/on-screen-keyboard.jpeg) |
+| Physical Keyboard Input| Expected to only accept letters A–Z and ignore other keys, except Tab/enter. | Pressed all keys possible. | Only valid A–Z keys registered; Tab and enter accepted for accessibility reasons. | No fix needed | ![screenshot](documentation/defensive/physical-keyboard-input.jpeg) |
+| Modal Handling| Expected to show and hide Bootstrap modals without console errors. | Opened and closed all models multiple times. | All modals opened and closed correctly with focus management, no errors logged | No fix needed |  ![screenshot](documentation/defensive/modal-handling.jpeg) |
