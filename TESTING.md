@@ -84,3 +84,22 @@ Defensive programming was manually tested with the below user acceptance testing
 | Handle Correct Guess | Expected to replace underscore and reveal correctly guessed letter | Correctly guessed the letter. | Correct letters were revealed without issues. | No fix needed | ![screenshot](documentation/defensive/handle-correct-guess.jpeg) |  
 | Handle Wrong Guess | Expected to reveal one bodypart of the hangman visual per wrong guess | Guessed wrong letters. | All wrong guesses correctly revealed more bodyparts of the hangman. | No fix needed | ![screenshot](documentation/defensive/handle-wrong-guess.jpeg) |  
 | Tries left and hangman visual | Each incorrect guess should decrement the “tries left” counter by one and update the hangman image to reflect the current state. | Clicked multiple incorrect letters and observed the number of tries and hangman image after each guess. | The “tries left” count decreased correctly with each wrong guess and the hangman image updated accordingly.| No fix needed | ![screenshot](documentation/defensive/tries-left-hangman-visual.jpeg) |  
+
+
+## User Story Testing
+
+| Target | Expectation | Outcome | Screenshot |
+| --- | --- | --- | --- |
+| As a player | I want to see a visual representation of the hangman | So that I can track my progress and understand how many incorrect guesses I have left. | ![screenshot](documentation/features/hangman-visuals.jpeg) |
+| As a player |I want to see underscores for each letter in the word | So that I know how many letters I need to guess and see when I get them right. | ![screenshot](documentation/features/placeholder-word-display.jpeg) |
+| As a player |I want the game to tell me whether my guess is correct or not | So that I can see my progress and adjust my next guess. | ![screenshot](documentation/defensive/handle-correct-guess.jpeg) |
+| As a player | I want the game to respond when I guess a wrong letter | So that I understand my mistake and feel the tension of limited chances. | ![screenshot](documentation/defensive/tries-left-hangman-visual.jpeg) |
+| As a player | I want to be able to reset the game at any time | So that I can play a new round without refreshing the page. | ![screenshot](documentation/features/reset-button.jpeg) |
+| As a player | I want to see my score increase each time I guess a word correctly | So that I feel rewarded and motivated to keep playing. | ![screenshot](documentation/features/current-score-counter.jpeg) |
+| As a player | I want to click on-screen letter buttons to guess the word | So that I can interact with the game without needing a keyboard. | ![screenshot](documentation/features/virtual-keyboard.jpeg) |
+| As a player | I want a fixed navbar with clearly visible Start and Reset buttons and a place to find the game rules | So that I can easily control the game from one central place. | ![screenshot](documentation/features/navbar.jpeg) |
+| As a player | I want to select a difficulty level before starting the game | So that I can tailor the challenge to match my skill and mood.| ![screenshot](documentation/features/difficulty-selection.jpeg) |
+| As a player | I want the game to track my highest score | So that I can try to beat it and feel rewarded when I do. | ![screenshot](documentation/features/highscore-tracker.jpeg) |
+| As a player | I want to receive a hint | So that I can get a final chance to guess the word correctly. | ![screenshot](documentation/features/hint-prompt.jpeg) |
+| As a player | I want to be able to use my physical keyboard to guess the letters | So that I can interact with the game more intuitively. | ![screenshot](documentation/features/hangman-visuals.jpeg) |
+| As a website visitor | I want to be automatically redirected to the homepage when I enetr a wrong or broken URL | So that I don't get stuck on an error page or have to use the browsers back button. | ![screenshot](documentation/features/404-redirect-page.jpeg) |
