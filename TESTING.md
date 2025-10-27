@@ -103,3 +103,47 @@ Defensive programming was manually tested with the below user acceptance testing
 | As a player | I want to receive a hint | So that I can get a final chance to guess the word correctly. | ![screenshot](documentation/features/hint-prompt.jpeg) |
 | As a player | I want to be able to use my physical keyboard to guess the letters | So that I can interact with the game more intuitively. | ![screenshot](documentation/features/hangman-visuals.jpeg) |
 | As a website visitor | I want to be automatically redirected to the homepage when I enetr a wrong or broken URL | So that I don't get stuck on an error page or have to use the browsers back button. | ![screenshot](documentation/features/404-redirect-page.jpeg) |
+
+
+## Automated Testing
+
+I have conducted a series of automated tests on my application.
+
+> **Note:** I fully acknowledge and understand that, in a real-world scenario, an extensive set of additional tests would be more comprehensive.
+
+- Installing Node.js (**MacOS**)
+  - https://codeinstitute.s3.eu-west-1.amazonaws.com/nodejs-installation-guides/Installing+and+maintaining+NodeJS+(MacOS).pdf
+
+  I have used the [Jest](https://jestjs.io) JavaScript testing framework to test the core functionality of my application.
+
+To enable Jest:
+- I initialized the project with `npm init`
+- Hit `<enter>` for all options, except for **test command:**, typed `jest`.
+- I installed Jest as a dev dependency with `npm install --save-dev jest`
+- I added the required environment setup with `npm install -D jest-environment-jsdom`
+- I included the @jest-environment jsdom directive at the top of the game.test.js file
+
+To allow Jest to interact with the DOM and local storage:
+- I simulated the DOM using innerHTML
+- Stubbed global dependencies like Bootstrap modals and confetti
+- Exported required functions at the end of script.js
+
+Once the test environment was configured, I followed the Red-Green Refactor process:
+- Write a failing test (Red)
+- Implement just enough code to pass it (Green)
+- Refactor if needed
+
+To run all tests:
+- `npm test`
+
+**NOTE**: To obtain a coverage report, use the following command:
+
+- `npm test --coverage`
+
+Below are the results from the tests that I've written for this application:
+
+| Test Suites | Tests | Screenshot |
+| --- | --- | --- |
+| 1 passed | 7 passed | ![screenshot](documentation/automation/jest-coverage.jpeg) |
+
+
