@@ -147,3 +147,14 @@ Below are the results from the tests that I've written for this application:
 | 1 passed | 7 passed | ![screenshot](documentation/automation/jest-coverage.jpeg) |
 
 
+## Bugs
+
+### Fixed Bugs 
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search/Karla-Stein/hangman?query=is%3Aissue%20is%3Aclosed%20label%3Abug&label=Fixed%20Bugs&color=green)](https://www.github.com/Karla-Stein/hangman/issues?q=is%3Aissue+is%3Aclosed+label%3Abug)
+
+I've used [GitHub Issues](https://www.github.com/Karla-Stein/hangman/issues) to track and manage bugs and issues during the development stages of my project.
+
+All previously closed/fixed bugs can be tracked [here](https://www.github.com/Karla-Stein/hangman/issues?q=is%3Aissue+is%3Aclosed+label%3Abug).
+
+![screenshot](documentation/bugs/gh-issues-closed.jpeg)
