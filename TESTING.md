@@ -158,3 +158,26 @@ I've used [GitHub Issues](https://www.github.com/Karla-Stein/hangman/issues) to 
 All previously closed/fixed bugs can be tracked [here](https://www.github.com/Karla-Stein/hangman/issues?q=is%3Aissue+is%3Aclosed+label%3Abug).
 
 ![screenshot](documentation/bugs/gh-issues-closed.jpeg)
+
+
+### Unfixed Bugs
+
+[![GitHub issue custom search](https://img.shields.io/github/issues-search/Karla-Stein/hangman?query=is%3Aissue%2Bis%3Aopen%2Blabel%3Abug&label=Unfixed%20Bugs&color=red)](https://www.github.com/Karla-Stein/hangman/issues?q=is%3Aissue+is%3Aopen+label%3Abug)
+
+Any remaining open issues can be tracked [here](https://www.github.com/Karla-Stein/hangman/issues?q=is%3Aissue+is%3Aopen+label%3Abug).
+
+![screenshot](documentation/bugs/gh-issues-open.jpeg)
+
+
+### Known Issues
+
+| Issue | Screenshot |
+| --- | --- |
+| The project is designed to be responsive from `320px` and upwards, in line with the material taught on the course LMS. Minor layout inconsistencies may occur on extra-wide (e.g. 4k/8k monitors), or smart-display devices (e.g. Nest Hub, Smart Watches, Gameboy Color, etc.), as these resolutions are outside the project’s scope, as taught by Code Institute. | ![screenshot](documentation/issues/poor-responsiveness.jpeg) |
+| During CSS validation, minor warnings appeared related to the Google Fonts @import statement. These warnings are common when using external font libraries, do not impact the functionality or rendering of the site and are out of my control.| ![screenshot](documentation/issues/css-warnings.jpeg) |
+
+> [!IMPORTANT]  
+> There are no remaining bugs that I am aware of, though, even after thorough testing, I cannot rule out the possibility.
+
+
+
