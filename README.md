@@ -315,7 +315,8 @@ While I kept the layout minimal and intentionally simple, the focus was on build
 - **MDN Web Docs** - Used as the primary reference for JavaScript, HTML and accessibility guidelines.
 - **W3Schools** - Occasionally referenced for syntax examples.
 - **Stack Overflow** - Used sparingly to troubleshoot specific issues, such as DOM manipulation quirks or event listener bugs.
-- **ChatGPT** - Used to quickly resolve development issues and clarify technical concepts.
+- **ChatGPT** - Used to quickly resolve development issues, clarify technical concepts and generate all wordbanks for word.js.
+- **Javascript.info** - Used to create redirect for 404. 
 - **Mentor Tim Nelson** - Helped with structuring and writing unit tests using Jest to validate DOM interactions and game behavior.
 
 ### Tools & Resources
@@ -330,6 +331,7 @@ While I kept the layout minimal and intentionally simple, the focus was on build
 - [**Jest**](https://jestjs.io) – JavaScript testing framework used for unit testing logic functions.
 - [**Balsamiq**](https://balsamiq.com) - Early-stage wireframe creation. 
 - [**Squoosh**](https://squoosh.app/) - Used for resizing hangman Images.
+- [**Javascript Info**](https://javascript.info/settimeout-setinterval) - Used as source for the redirect interval.
 
 
 ### Media

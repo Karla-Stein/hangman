@@ -1,6 +1,8 @@
 /* jshint esversion: 11 */
 /* exported wordBankEasy, wordBankMedium, wordBankHard */
 
+// All wordbanks generated with chatGPT
+
 const wordBankEasy = {
   "apple": "A round fruit that grows on trees.",
   "brush": "Used to clean teeth or hair.",
