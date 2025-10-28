@@ -123,7 +123,6 @@ function gameStart() {
     randomWordArray = wordBank[wordBankIndex].toUpperCase().split("");
     placeholderArray = new Array(randomWordArray.length).fill("_ ");
     document.getElementById("placeholder").innerText = placeholderArray.join("");
-    console.log(randomWordArray);
 }
 
 /**
@@ -271,7 +270,6 @@ function gameWon(placeholderArray, randomWordArray) {
 function triesLeft() {
     document.getElementById("tries").innerText = userTry - 1;
     userTry--;
-    console.log("User tries left:", userTry);
 }
 
 /**
@@ -280,7 +278,6 @@ function triesLeft() {
 function addCurrentScore() {
     document.getElementById("current-score").innerText = currentScore + 1;
     currentScore++;
-    console.log("Current score:", currentScore);
 }
 
 /**
@@ -303,7 +300,6 @@ function addHighScore() {
         document.getElementById("highscore").innerText = userScore;
         localStorage.setItem("highscore", userScore);
     }
-    console.log("UserScore:", userScore);
 }
 
 /**
@@ -432,7 +428,6 @@ function resetHighscore() {
     localStorage.setItem("highscore", "0");
     let userHighscore = localStorage.getItem("highscore");
     document.getElementById("highscore").innerText = userHighscore;
-    console.log("Reset highscore:", userHighscore);
 }
 
 // // Attach click event to each dropdown item (Easy, Medium, Hard)

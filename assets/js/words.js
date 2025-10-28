@@ -181,7 +181,7 @@ const wordBankMedium = {
   "shovel": "Moves dirt or snow efficiently",
   "pickle": "A sour snack",
   "folder": "Keeps papers or files in order",
-  "subnet": "Usually underground",
+  "subway": "Usually underground",
   "gloves": "Worn to warm or protect hands",
   "bottle": "Holds liquid, often with a cap",
   "rubber": "Stretches, bounces, and seals",
