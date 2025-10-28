@@ -258,7 +258,10 @@ function gameWon(placeholderArray, randomWordArray) {
             disableButtons()
         }
         let modal = document.getElementById("end-game");
-        modal.addEventListener("click", resetGame);
+        modal.addEventListener("click", () => {
+            resetGame();
+            modalEndGame.hide();
+        });
     }
 }
 
