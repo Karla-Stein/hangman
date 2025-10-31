@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const countdownEl = document.getElementById("countdown");
 
   countdownEl.innerText = `Redirecting in ${seconds} seconds...`;
-//  Create an interval that runs a function every 1000 milliseconds (1 second)
+  //  Create an interval that runs a function every 1000 milliseconds (1 second)
   const countdown = setInterval(() => {
     seconds--;
     // Use a ternary operator to display "second" or "seconds"

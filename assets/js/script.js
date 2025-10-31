@@ -436,7 +436,6 @@ document.querySelectorAll(".dropdown-item").forEach(item => {
     item.addEventListener("click", function () {
         // store inner text of user choice and set to lowercase
         difficulty = item.innerText.toLowerCase();
-        console.log(`User selected ${difficulty} difficulty`);
         getDifficulty(difficulty);
         // reset the game if user selects difficulty mid-game
         resetGame();

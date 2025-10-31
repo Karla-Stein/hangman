@@ -57,11 +57,11 @@ body {
 }
 
 /* 404 page */
-#wrong-url-message{
+#wrong-url-message {
     font-family: var(--secondary-font);
 }
 
-#hangman-span{
+#hangman-span {
     font-family: var(--primary-font);
 }
 
@@ -118,6 +118,7 @@ body {
 
 .pulse {
     animation: pulse 1.2s infinite;
+    cursor: help;
 }
 
 /* Media queries */
